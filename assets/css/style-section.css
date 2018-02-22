@@ -1,0 +1,146 @@
+#cuerpo{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	
+
+}
+
+#titulo_ultimos{
+	padding: 3% 0% 0% 3%;
+	text-align: left;
+	border-bottom: 2px solid #000;
+}
+#cuerpo article{
+	float: left;
+	padding:2%;
+	margin: auto;
+	width: 25%;
+
+}
+.img_container{
+	width: 200px;
+	height: 280px;
+	/*background-color:rgba(75,75,75,0.3);*/
+	margin: auto;
+	border-left: solid aliceblue;
+	border-right: solid aliceblue;
+	border-top: solid aliceblue;
+
+}
+.img_container img{
+	height: 100%;
+	margin: auto;
+	
+}
+
+#datos{ 
+	/*background: #f0edea;*/
+	width: 200px;
+	margin: auto;
+	border-left: solid aliceblue;
+	border-right: solid aliceblue;
+	border-bottom: solid aliceblue;
+}
+#datos h3{
+	padding: 8px;
+	height: 70px;
+}
+#datos a{
+	text-decoration: none;
+	color: #ff5248;
+}
+#datos span{
+	font-size: 15pt;
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+	margin-bottom:8px;  
+}
+#cuerpo input{
+	font-size: 16pt; 
+	/*background-color:#a1d11c; */
+	border: none;
+	margin: auto;
+	width: 100%;
+	padding: 5px;
+}
+footer{
+	float: none;
+	clear: both;
+	width: 100%;
+	/*position: absolute;*/
+}
+footer .row{
+	width: 100%;
+	padding-top: 25px;
+}
+footer .row div:not(.iconos){
+	border-right: 2px solid #fff;
+
+}
+footer .row div{
+	padding-top: 20px;
+	padding-bottom:20px; 
+	padding-left: 5%; 
+	text-align: left;
+}
+footer div a{
+	color: #fff;
+	text-decoration: none;
+	margin-bottom: 0;
+}
+footer div h5{
+	margin-bottom:20px; 
+}
+footer div a p{
+	margin: 5px	;
+}
+footer div a:hover{
+	color: #000;
+	text-decoration: none;
+}
+footer div span{
+	margin: 0 10px;
+	font-size: 25pt;
+}
+
+#btn_biblio{
+	position: relative;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin-bottom:2%;
+
+}
+#btn_biblio a{
+	margin-top: 100px;
+	font-size: 16pt;
+	width: 50%;
+	text-decoration: none;
+	color: #fff;
+	background-color: #ff5248;
+	padding: 10px 30px;
+	border-radius: 10px;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+}
+#auspiciantes{
+clear: both;
+	width: 100%;
+	margin:auto;
+	background-color: #e5e2e2;
+}
+#img_aus{
+	width: 400px;
+	margin: auto;
+}
+#auspiciantes img{
+	
+	height: 50px;
+	margin: 20px;
+	text-align: right; 
+	
+	
+}

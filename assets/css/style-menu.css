@@ -1,0 +1,310 @@
+
+/*ROJO : #ff5248*/
+
+header{
+	width: 100%;
+	float: left;
+	background-color: #000;
+	z-index: 1000;
+	opacity: 0.85;
+}
+header nav{
+	width: 100%;
+	margin:auto;
+	background-color: #273B47;
+	z-index: 1000;
+	
+
+}
+.navbar{
+	float: right;
+	margin-left:50px;
+
+	
+}
+#div_form{
+	background-color: #000 !important;
+}
+#b_search{
+	border-color: #ff5248;
+	color: #ff5248;
+}
+#b_search:hover{
+	background-color: #ff5248;
+	color: #fff;
+}
+#div_form input{
+	width: 400px;
+}
+.icon-menu{
+	display: none;
+}
+.menu_bar{
+	padding: 10px 8px;
+	display: block;
+	float: left;
+}
+
+.menu_bar .bt-menu{
+	color: #fff;
+	text-decoration: none;
+	margin-left:50px; 
+	overflow: hidden;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size:26pt;
+
+
+}
+
+header nav ul{
+	float: right;
+	overflow: hidden;
+	list-style: none;
+	padding: 10px 8px;
+	margin: 0;
+}
+header nav ul li{
+	float: left;
+	font-family: Verdana Pro Cond,Arial, sans-serif;
+	padding: 5px;
+	font-size: 16px;
+}
+header nav ul li a{
+	color: #fff;
+	padding: 8px;
+	display: block;
+	text-decoration: none;
+
+}
+header nav ul li span{
+margin-right: 10px;	
+}
+
+
+header nav ul li a:hover{
+	color: #ff5248;
+	text-decoration: none;
+}
+
+.inicia_sesion{
+	
+	font-weight:700;
+	text-decoration: underline;
+}
+.inicia_sesion:hover{
+	background:#273B47;
+	color: #fff;
+}
+.registrate{
+	background: #FF4842;
+	font-weight: 600;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	
+
+}
+
+.registrate:hover{
+	background:#C23732;
+	color: #fff;
+}
+/*Estilos del Banner*/
+#banner{
+	height: 500px;
+	width: 100%;
+	background: url(../img/sitio/bn.jpg);
+
+}
+#informacion{
+	float: left;
+	margin-left:5%; 
+	width: 40%;
+	height: 85%;
+	/*La siguiente linea sirve para poner transparente un componente sin afectar a su hijos (contenido)*/
+	/*Cosa que no se logra con el atributo opacity*/
+	background-color:rgba(255,255,255,0.3);
+	position: relative;
+	/*El text alings me centra todos los componesntes dentro del div*/
+	text-align: center;
+
+}
+
+#informacion h1{
+	padding: 10%;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+	font-weight: 700;
+}
+#informacion a{
+	background-color:#ff5248;
+	padding: 10px 30px;
+	border-radius: 7px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 16pt; 
+	font-weight: 600; 
+	
+
+}
+#informacion a:hover{
+	background:#DE473F;
+	color: #fff;
+}
+#inf_ad h4{
+	text-align: center;
+	padding-top: 20%;
+	margin: auto;	
+	color: #fff;
+	width: auto;
+}
+/*FIN Estilos del Banner*/
+
+/*INICION AVATAR PARA SESION ID=AVATAR EN INDEX*/
+.avatar{
+	font-family:Verdana Pro Cond,Arial, sans-serif; 
+	display: none;
+	background: #000;
+	text-decoration: none;
+	padding: 8px;
+	font-size: 16px;
+	font-weight: 500;
+	float: right;
+	margin-right: 8px;
+	margin-top: 5px;
+	border: solid 1px #ff5248;
+	border-radius: 5px ;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-o-border-radius: 5px;
+	}
+.avatar:hover{
+	border: solid 1px #fff;
+	background: #ff5248;
+	
+}
+.avatar a{
+	color:#fff;
+	text-decoration: none;
+	
+}
+.avatar a:hover{
+	
+	text-decoration: none;
+	color: #fff;
+}
+.avatar span{
+	margin-left: 10px;
+	float: right;
+}
+.opc_avatar{
+	display: none;
+	position: absolute;
+	right: 0px;
+	background: #ff5248;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: 500;
+	z-index: 200;
+	margin-right: 15px;
+	margin-top: 1%;
+	border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-o-border-radius: 5px;
+	}
+.opc_avatar ul{
+	float: right;
+	list-style: none;
+}
+.opc_avatar li{
+	
+	padding: 2px;
+}
+.opc_avatar li a{
+	text-decoration: none;
+	color: #fff;
+}
+.opc_avatar li a:hover{
+	text-decoration: none;
+	color: #999;
+}
+
+
+/*FIN AVATAR PARA SESION ID=AVATAR EN INDEX*/
+@media screen and (max-width: 1046px){
+	header{
+		position: fixed;
+	}
+		body{
+		padding-top:45px;
+	}
+
+header nav{
+		width: 50%;
+		display: block;
+		height: calc(100% - 60px);
+		margin: 0px;
+		overflow: scroll;
+		position:fixed;	
+	}
+	header nav ul{
+		float: none;
+	}
+	header nav ul li{
+		float: none;
+		display:block;
+		border-bottom:1px solid rgba(255,255,255,.3);
+		margin:auto;
+	}
+	.menu_bar{
+		padding:0;
+		display: block;
+		width: 100%;
+		background:#273B47;
+		position: fixed;
+		top:0;
+	}
+	.icon-menu{
+	display: block;
+}
+	.menu_bar .bt-menu{
+		display: block;
+		padding: 8px 20px 8px 20px;
+		color: #fff;
+		overflow: hidden;
+		text-decoration: none;
+		font-weight: bold;
+		font-size:23px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+				box-sizing: border-box;
+
+	}
+	#logo{
+
+	  float:left;
+	  width: 33px;
+	  height: 33px;
+	  padding: 2px;
+	  margin-left: 20px;
+	  margin-top: 4px;
+	}
+	.menu_bar span{
+		float: right;
+		font-size:30px;
+	}
+	.contacto{
+		padding-top:60px; 
+	}
+
+
+}
+
+@media screen and (max-width: 330px) {
+	#logo{
+		display: none;
+	}
+}

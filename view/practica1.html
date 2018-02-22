@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<htm ng-app>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>inicio</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
+
+	</head>
+	<body>
+	<CENTER><header>PRACTICA 1</header></CENTER>
+		{{"Hola quinto A"}}
+		<div>
+			<label>Nombre</label>
+			<input type="text" name="nombres" ng-model="nombres">
+			<br>
+			<label>Apellidos</label>
+			<input type="text" name="apellidos" ng-model="apellidos">
+			<br>
+			<label>Cedula</label>
+			<input type="text" name="cedula" ng-model="cedula">
+			<br>
+			<label>Tú estas ingresando el nombre: {{nombres}} {{apellidos}} con cédula: {{cedula}}</label>
+
+		</div>
+	</body>
+</html>
