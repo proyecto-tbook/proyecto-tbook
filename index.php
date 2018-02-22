@@ -48,16 +48,7 @@ session_start();
     echo "</script>";
   }
   ?>
-    </div>
-    <div id='avatar' class='avatar'>
-      <a href="javascript:opcAvatar();"><span class='icon-circle-down'></span><span>|</span></a><a href='estudiante.php' target='_blank'><?php echo $_SESSION['fullname']?></a>
-      <div class='opc_avatar'>
-        <ul>
-          <li><a href="view/user.php" target='_blank'>Mi perfil</a></li>
-          <li><a href="controller/cerrarSesion.php">Salir</a></li>
-        </ul>
-      </div>
-    </div>
+   
   <?php
   if(isset($_SESSION['fullname'])){
     echo "<script>";
