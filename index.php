@@ -40,7 +40,22 @@ session_start();
     include("view/menu.html");
   ?>
 	</header>
- 
+  <?php
+  if(isset($_SESSION['fullname'])){
+    echo "<script>";
+    echo "desaparecer();";
+    echo "aparecer();";
+    echo "</script>";
+  }
+  ?>
+   
+  <?php
+  if(isset($_SESSION['fullname'])){
+    echo "<script>";
+    echo "aparecer();";
+    echo "</script>";
+  }
+  ?>
 	<div id="banner">
 		<div id="informacion">
 				<h1>Prestamo y cambio<br>de libros usados</h1>
