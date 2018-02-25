@@ -16,7 +16,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {
     	$outp .= ",";
     }
-    $outp .= '{"nombre":"'  . $rs['Titutlo'] . '",';
+    $outp .= '{"nombre":"'  . $rs['Titulo'] . '",';
     $outp .= '"imagen":"'   . $rs["Imagen"]        . '",';
     $outp .= '"autor":"'   . $rs["Autor"]        . '",';
     $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
