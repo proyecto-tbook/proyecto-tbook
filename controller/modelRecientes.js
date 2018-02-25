@@ -1,4 +1,4 @@
-var app = angular.module('myApp', []);
+var app = angular.module('app', []);
 app.controller('modeloReciente', function($scope, $http) {
     $http.get("model/recientes_mysql.php")
     .then(function (response) {$scope.names = response.data.records;    	
@@ -8,7 +8,7 @@ app.controller('modeloReciente', function($scope, $http) {
 });
 
 //Función para limitar el numero de carateres de una palabra
-angular.module('myApp').filter('cut', function () {
+angular.module('app').filter('cut', function () {
         return function (value, wordwise, max, tail) {
             if (!value) return '';
 
