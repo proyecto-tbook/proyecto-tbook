@@ -22,7 +22,7 @@ session_start();
     <script type="text/javascript" src="controller/registro.js"></script>
 
  
-   
+   <!-- Alex -->
 
 	<script type="text/javascript" src="controller/modelRecientes.js"></script>
 <!-- fin angular js -->
