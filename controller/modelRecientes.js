@@ -1,14 +1,32 @@
-var app = angular.module('myApp', []);
+var app = angular.module('app', []);
 app.controller('modeloReciente', function($scope, $http) {
     $http.get("model/recientes_mysql.php")
     .then(function (response) {$scope.names = response.data.records;    	
     });
     
+    $scope.detalleLibro=function(libro){
+        alert(libro);
+    
+    $http({
+        method: 'GET',
+        url: '../model/verLibro.php',
+        params: {id: libro}
+      })
+      .then(function successCallback(datosDependencias)
+      {
+        $scope.libro = datosDependencias.data.records;
+        console.log(datosDependencias);
+
+      },function errorCallback(datosDependencias)
+      {
+        console.log("Error, al tratar de traer los datos")
+      }); 
+    };
     
 });
 
 //Función para limitar el numero de carateres de una palabra
-angular.module('myApp').filter('cut', function () {
+angular.module('app').filter('cut', function () {
         return function (value, wordwise, max, tail) {
             if (!value) return '';
 
@@ -40,3 +58,4 @@ app.controller('controladorRegistro',function($scope){
             $scope.mensajeError="";
     };  
 });
+//Controlador para ver los detalles de un libro especifico, implementado en el index

@@ -10,6 +10,11 @@ app.config(function($routeProvider/*$locationProvider*/){
 		.when('/perfil',{
 			templateUrl: '../view/presentar_libro.html',
 			controller: 'controlador'
+		});
+		
+		.when('/verLibro',{
+			templateUrl: 'view/detalleLibro.html',
+			controller: 'myApp'
 		})
 		
 		
