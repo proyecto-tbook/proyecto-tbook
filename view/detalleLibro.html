@@ -1,7 +1,7 @@
 
 
 	<div>
-		<h1>Biblioteca Personal</h1>
+		
 		<div>
 			<table class="table table-striped">
 				<tr>
@@ -13,9 +13,9 @@
 
 
 				</tr>
-				<tr ng-repeat="data in names | orderBy:filtro | filter:busqueda" >
-					<td>{{data.nombre}}</td>
-					<td>{{data.autor}}</td>					
+				<tr ng-repeat="data in detallelibro" >
+					<td>{{data.titulo}}</td>
+					<td>{{data.descripcion}}</td>					
 					<td><img src="../assets/img/libros/{{data.imagen}}" class="col-lg-2"></td>
 					<td>{{data.f_public}}</td>
 					<th colspan="2">

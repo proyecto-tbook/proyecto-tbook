@@ -7,15 +7,16 @@ app.config(function($routeProvider/*$locationProvider*/){
 		//	templateUrl: '',//el archivo que quieren que se cargue
 			//controller://y que controlador se va a utilizar.... tambien se puede omitir si no se utiliza controlador
 		//})
+		.when('/verLibro',{
+			templateUrl: 'view/detalleLibro.html',
+			controller: 'modeloReciente'
+		})
 		.when('/perfil',{
 			templateUrl: '../view/presentar_libro.html',
 			controller: 'controlador'
-		});
-		
-		.when('/verLibro',{
-			templateUrl: 'view/detalleLibro.html',
-			controller: 'myApp'
 		})
+		
+		
 		
 		
 		//$locationProvider.html5Mode(true);

@@ -34,7 +34,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="modeloReciente">
 	<header>
 	<!--<script type="text/javascript" src="assets/js/menu.js"></script>-->
   <?php
@@ -68,7 +68,7 @@ session_start();
 	</div>
   <section>
     
-      <div id="cuerpo" ng-controller="modeloReciente">
+      <div id="cuerpo" >
       
         
 
@@ -83,12 +83,13 @@ session_start();
             <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
             <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
             <form>
-            <a href="#!verLibro" ng-click='detalleLibro({{x.lib_id}})' class="btn btn-success btn-lg" >Ver ></a>
+            <a href="#!verLibro" ng-click="detalleLibro(x.lib_id)" class="btn btn-success btn-lg" >Ver ></a>
           </form>
           </div>
           
           </div>
         </article>
+          <div ng-view></div>
       </div>
      
       <div id='btn_biblio'>
@@ -101,7 +102,7 @@ session_start();
         </div>
       </div>
   </section>
-   <div ng-view><H2>hola</H2></div>
+ 
 <footer style="background: #ff5248; color: white; text-align: center">
     <div class="row">
         <div class="col-md-4">

@@ -1,20 +1,19 @@
-var app = angular.module('app', []);
+var app = angular.module('app');
 app.controller('modeloReciente', function($scope, $http) {
+
     $http.get("model/recientes_mysql.php")
     .then(function (response) {$scope.names = response.data.records;    	
     });
-    
     $scope.detalleLibro=function(libro){
-        alert(libro);
-    
+      alert(libro);
     $http({
         method: 'GET',
-        url: '../model/verLibro.php',
+        url: 'model/verLibro.php',
         params: {id: libro}
       })
       .then(function successCallback(datosDependencias)
       {
-        $scope.libro = datosDependencias.data.records;
+        $scope.detallelibro = datosDependencias.data.records;
         console.log(datosDependencias);
 
       },function errorCallback(datosDependencias)

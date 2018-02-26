@@ -18,8 +18,9 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '{"titulo":"'  . $rs['Titulo'] . '",';
     $outp .= '"imagen":"'   . $rs["Imagen"]        . '",';
     $outp .= '"autor":"'   . $rs["Autor"]        . '",';
+    $outp .= '"descripcion":"'   . $rs["Descripcion"]        . '",';
     $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
-    $outp .= '"descripcion":"'. $rs["Descripcion"]     . '"}';
+
 }
 $outp ='{"records":['.$outp.']}';
 $conn->close();

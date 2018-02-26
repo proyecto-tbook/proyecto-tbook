@@ -58,7 +58,7 @@ $users=  getUsuario($fullname);
 	<h1 id="t_mi_tbook">MI TBOOK</h1>
 	<div align="center" class="panel panel-danger col-sm-5 col-md-2" width="100px" height="195">
 	<div class="panel-heading">
-	<h3 clas="panel-title" align="center">Calificación</h3>
+	<h3 class="panel-title" align="center">Calificación</h3>
 	</div>
 	<div class="star panel-body" align="center">
 		
