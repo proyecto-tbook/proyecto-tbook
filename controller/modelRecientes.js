@@ -1,14 +1,27 @@
 var app = angular.module('app');
-app.controller('modeloReciente', function($scope, $http) {
 
+
+
+app.controller('modeloReciente', function($scope,$http) {
     $http.get("model/recientes_mysql.php")
     .then(function (response) {$scope.names = response.data.records;    	
     });
-    $scope.detalleLibro=function(libro){
-      alert(libro);
+   
+    
+});
+app.controller('detalle', function($scope, $http) {
+  $scope.getParameterByName=function(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+};
+  // $scope.verLibro=function(libro){
+    var libro = $scope.getParameterByName('lib');
+    // alert(prodId);
     $http({
         method: 'GET',
-        url: 'model/verLibro.php',
+        url: '../model/verLibro.php',
         params: {id: libro}
       })
       .then(function successCallback(datosDependencias)
@@ -20,9 +33,10 @@ app.controller('modeloReciente', function($scope, $http) {
       {
         console.log("Error, al tratar de traer los datos")
       }); 
-    };
-    
+    // };
+
 });
+
 
 //Función para limitar el numero de carateres de una palabra
 angular.module('app').filter('cut', function () {

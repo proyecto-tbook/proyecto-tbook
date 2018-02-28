@@ -82,14 +82,15 @@ session_start();
           <div id='datos'>
             <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
             <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
-            <form>
-            <a href="#!verLibro" ng-click="detalleLibro(x.lib_id)" class="btn btn-success btn-lg" >Ver ></a>
-          </form>
+            
+            <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" ng-model="servicio.datosCompartidos" ng-click="servicio.anadirElemento(x.lib_id)">Ver ></a>
+          <!--  -->
           </div>
           
           </div>
         </article>
-          <div ng-view></div>
+        <div ng-view>
+        </div>
       </div>
      
       <div id='btn_biblio'>
@@ -249,6 +250,19 @@ session_start();
           ?>
 
         </div>
+        
+
+  <div ng-controller="controlador2">
+    <p>
+     {{servicio.datosCompartidos}}
+    </p>
+    <ul>
+      <li ng-repeat="elemento in servicio.listaCompartida track by $index">{{elemento}}</li>
+    </ul>
+    <button ng-click="servicio.limpiarLista()">Vacíar lista
+    </button>
+  </div>
+
 </body>
 
 
