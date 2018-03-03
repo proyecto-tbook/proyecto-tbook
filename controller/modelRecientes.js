@@ -10,12 +10,16 @@ app.controller('modeloReciente', function($scope,$http) {
     
 });
 app.controller('detalle', function($scope, $http) {
+ 
   $scope.getParameterByName=function(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
     results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-};
+  };
+ 
+
+
   // $scope.verLibro=function(libro){
     var libro = $scope.getParameterByName('lib');
     // alert(prodId);
@@ -27,6 +31,7 @@ app.controller('detalle', function($scope, $http) {
       .then(function successCallback(datosDependencias)
       {
         $scope.detallelibro = datosDependencias.data.records;
+        $scope.comentlib = datosDependencias.data.records2;
         console.log(datosDependencias);
 
       },function errorCallback(datosDependencias)

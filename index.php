@@ -21,7 +21,11 @@ session_start();
     <script type="text/javascript" src="assets/js/opc_avatar.js"></script>
     <script type="text/javascript" src="controller/registro.js"></script>
     <script type="text/javascript" src="controller/app.js"></script>
-
+  <!-- Importancion para ventana Modal de Inicio de sesion-->
+  <script src="assets/js/valida_login.js"></script> 
+  <script  src="controller/app.js"></script>
+  <script  src="controller/controller.js"></script>
+  <!-- FIN Impoertancion para ventana Modal de Inicio de sesion-->
  
    <!-- Alex -->
 
@@ -49,14 +53,15 @@ session_start();
     echo "</script>";
   }
   ?>
-   
-  <?php
-  if(isset($_SESSION['fullname'])){
-    echo "<script>";
-    echo "aparecer();";
-    echo "</script>";
-  }
-  ?>
+  
+   <?php
+      if(isset($_SESSION['fullname'])){
+        echo "<script>";
+        echo "aparecer();";
+        echo "</script>";
+      }
+    ?>
+
 	<div id="banner">
 		<div id="informacion">
 				<h1>Prestamo y cambio<br>de libros usados</h1>
@@ -250,18 +255,6 @@ session_start();
           ?>
 
         </div>
-        
-
-  <div ng-controller="controlador2">
-    <p>
-     {{servicio.datosCompartidos}}
-    </p>
-    <ul>
-      <li ng-repeat="elemento in servicio.listaCompartida track by $index">{{elemento}}</li>
-    </ul>
-    <button ng-click="servicio.limpiarLista()">Vacíar lista
-    </button>
-  </div>
 
 </body>
 
