@@ -38,7 +38,9 @@ session_start();
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	
 </head>
+
 <body ng-app="app" ng-controller="modeloReciente">
+
 	<header>
 	<!--<script type="text/javascript" src="assets/js/menu.js"></script>-->
   <?php

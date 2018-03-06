@@ -1,8 +1,10 @@
+
 var app = angular.module('app');
 
 
 
 app.controller('modeloReciente', function($scope,$http) {
+
     $http.get("model/recientes_mysql.php")
     .then(function (response) {$scope.names = response.data.records;    	
     });
