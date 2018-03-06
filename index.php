@@ -20,9 +20,14 @@ session_start();
   	<script type="text/javascript" src="assets/js/angular-resource.min.js"></script> 
     <script type="text/javascript" src="assets/js/opc_avatar.js"></script>
     <script type="text/javascript" src="controller/registro.js"></script>
-
+    <script type="text/javascript" src="controller/app.js"></script>
+  <!-- Importancion para ventana Modal de Inicio de sesion-->
+  <script src="assets/js/valida_login.js"></script> 
+  <script  src="controller/app.js"></script>
+  <script  src="controller/controller.js"></script>
+  <!-- FIN Impoertancion para ventana Modal de Inicio de sesion-->
  
-   
+   <!-- Alex -->
 
 	<script type="text/javascript" src="controller/modelRecientes.js"></script>
 <!-- fin angular js -->
@@ -33,7 +38,9 @@ session_start();
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	
 </head>
-<body ng-app="app">
+
+<body ng-app="app" ng-controller="modeloReciente">
+
 	<header>
 	<!--<script type="text/javascript" src="assets/js/menu.js"></script>-->
   <?php
@@ -48,14 +55,15 @@ session_start();
     echo "</script>";
   }
   ?>
-   
-  <?php
-  if(isset($_SESSION['fullname'])){
-    echo "<script>";
-    echo "aparecer();";
-    echo "</script>";
-  }
-  ?>
+  
+   <?php
+      if(isset($_SESSION['fullname'])){
+        echo "<script>";
+        echo "aparecer();";
+        echo "</script>";
+      }
+    ?>
+
 	<div id="banner">
 		<div id="informacion">
 				<h1>Prestamo y cambio<br>de libros usados</h1>
@@ -67,8 +75,9 @@ session_start();
 	</div>
   <section>
     
-      <div id="cuerpo" ng-controller="modeloReciente">
+      <div id="cuerpo" >
       
+        
 
         <div id="titulo_ultimos" ><h2>Ultimos añadidos</h2>
         </div>
@@ -80,29 +89,17 @@ session_start();
           <div id='datos'>
             <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
             <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
-            <form>
-            <input class="btn btn-success btn-lg" type='submit' name='btn_libro' value='Ver >'>
-          </form>
+            
+            <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" ng-model="servicio.datosCompartidos" ng-click="servicio.anadirElemento(x.lib_id)">Ver ></a>
+          <!--  -->
           </div>
           
           </div>
         </article>
-            <article ng-repeat="x in names">
-          <div >
-          <div class='img_container'>
-            <img src="assets/img/libros/{{x.dir_img}}">
-          </div>
-          <div id='datos'>
-            <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
-            <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
-            <form>
-            <input class="btn btn-success btn-lg" type='submit' name='btn_libro' value='Ver >'>
-          </form>
-          </div>
-          
-          </div>
-        </article>
+        <div ng-view>
+        </div>
       </div>
+     
       <div id='btn_biblio'>
         <a href="">Ir a Biblioteca</a>
       </div>
@@ -113,6 +110,7 @@ session_start();
         </div>
       </div>
   </section>
+ 
 <footer style="background: #ff5248; color: white; text-align: center">
     <div class="row">
         <div class="col-md-4">
@@ -259,6 +257,7 @@ session_start();
           ?>
 
         </div>
+
 </body>
 
 

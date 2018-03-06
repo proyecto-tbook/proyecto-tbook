@@ -1,7 +1,7 @@
 
 <div class="modal-dialog" role="document">
     <div class="modal-content">
-        <form role="form" name="login" action="controller/autenticacion.php" method="post">
+        <form role="form" name="login" action="\tbookv3/controller/autenticacion.php" method="post">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">Autenticacion</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -25,9 +25,9 @@
         </form>
     </div>
 </div>
-<script src="../assets/js/valida_login.js"></script>
+<!-- <script src="../assets/js/valida_login.js"></script>
 <script src="../assets/js/angular.min.js"></script>
 <script src="../assets/angular/angular-resource.min.js"></script>   
 <script src="../assets/js/angular-route.min.js"></script>  
 <script  src="../controller/app.js"></script>
-<script  src="../controller/controller.js"></script>
+<script  src="../controller/controller.js"></script> -->

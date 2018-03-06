@@ -2,28 +2,35 @@
 
 
 <div class='menu_bar'>
-<a href='http://localhost:8080/tbookV3' class='bt-menu'><span class='icon-menu'></span>TBOOK</a>
-<div id='div_form' class='navbar navbar-light bg-light'>"
-<form class='form-inline'>");
-<input class='form-control mr-sm-2' type='search' placeholder='Buscar libros ...' aria-label='Search'>
-<button id='b_search' class='btn btn-outline-success my-2 my-sm-0' type='submit'><span class='icon-search'></span></button>"
-</form>
-</div>
+	<a href='http://localhost:8080/tbookV3' class='bt-menu'><span class='icon-menu'></span>TBOOK</a>
+	<div id='div_form' class='navbar navbar-light bg-light'>
+		<form class='form-inline'>
+			<input class='form-control mr-sm-2' type='search' placeholder='Buscar libros ...' aria-label='Search'>
+			<button id='b_search' class='btn btn-outline-success my-2 my-sm-0' type='submit'><span class='icon-search'></span></button>
+		</form>
+	</div>
 </div>
 <nav>
-<ul>
-<li><a href='\tbookV3/index.php'>Inicio </a></li>
-<li><a href='intermedio_acceder_doc.php'><span class='icon-user-tie'></span>Biblioteca</a></li>
-<li><a href='#'><span class='icon-phone'></span>Politicas</a></li>
-<li><a id='registrarse' class='registrate'  data-toggle='modal' style='margin-left: 10%' data-target='#myModal' href='./view/login.php'>Iniciar Sesión</a></li>
-<div id='avatar' class='avatar'>
- <a href='javascript:opcAvatar();'><span class='icon-circle-down'></span><span>|</span></a><a href='\tbookV3/view/user.php' ><?php echo $_SESSION['fullname']?></a>
-  <div class='opc_avatar'>
-   <ul>
-     <li><a href='\tbookV3/view/user.php'>Mi perfil</a></li>
-<li><a href='\tbookV3/controller/cerrarSesion.php'>Salir</a></li>
-</ul>
-</div>
-</div>
-</ul>
+	<ul>
+	<li><a href='\tbookV3/index.php'>Inicio </a></li>
+	<li><a href='intermedio_acceder_doc.php'><span class='icon-user-tie'></span>Biblioteca</a>
+		<ul>
+            <li><a href="#" target="_self" >Poesia</a></li>
+            <li><a href="#" target="_self" >Novela</a></li>
+            <li><a href="#" target="_self" >Literatura</a></li>
+            <li><a href="#" target="_self" >Filosofia</a></li>
+	    </ul>
+	</li>
+	<li><a href='#'><span class='icon-phone'></span>Politicas</a></li>
+	<li><a id='registrarse' class='registrate'  data-toggle='modal' style='margin-left: 10%' data-target='#myModal' href='./view/login.php'>Iniciar Sesión</a></li>
+	<div id='avatar' class='avatar'>
+		 <a href='javascript:opcAvatar();'><span class='icon-circle-down'></span><span>|</span></a><a href='\tbookV3/view/user.php' ><?php echo $_SESSION['fullname']?></a>
+		  <div class='opc_avatar'>
+			<ul>
+			    <li><a href='\tbookV3/view/user.php'>Mi perfil</a></li>
+				<li><a href='\tbookV3/controller/cerrarSesion.php'>Salir</a></li>
+			</ul>
+		</div>
+	</div>
+	</ul>
 </nav>

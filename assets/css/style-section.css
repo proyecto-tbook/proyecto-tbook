@@ -46,10 +46,15 @@
 	padding: 8px;
 	height: 70px;
 }
-#datos a{
-	text-decoration: none;
+#datos a span{
+	/*text-decoration: none;*/
 	color: #ff5248;
+	font-size: 11pt;	
 }
+#datos a span:hover{
+	text-decoration: underline;	
+}
+
 #datos span{
 	font-size: 15pt;
 	width: 100%;
@@ -58,9 +63,10 @@
 	margin-right: 10px;
 	margin-bottom:8px;  
 }
-#cuerpo input{
+#cuerpo a{
 	font-size: 16pt; 
 	/*background-color:#a1d11c; */
+	/*color: #fff;*/
 	border: none;
 	margin: auto;
 	width: 100%;

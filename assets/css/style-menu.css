@@ -81,6 +81,30 @@ header nav ul li span{
 margin-right: 10px;	
 }
 
+header nav ul li > ul    {
+	background: #000;
+	display:none;
+	position:absolute;
+	min-width:105px;
+	max-width:105px;
+	padding: 0;
+}
+header nav ul li > ul  li  {
+	width: 100%;
+	padding: 6px;
+	text-align: center;
+	}
+header nav ul li > ul li :hover    {
+	width: 100%;
+	background: #27101A;
+	border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	
+}
+header nav ul li:hover > ul {
+	display:block;
+} 
 
 header nav ul li a:hover{
 	color: #ff5248;
