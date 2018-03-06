@@ -52,3 +52,59 @@
 	text-align: justify;
 	padding-right: 8%;
 }
+
+/*####################################################*/
+
+/*Estilos Comentarios*/
+#t_coment{
+width: 100%;
+}
+#t_coment h4{
+	padding: 10px;
+	float: left;
+
+}
+.coments{
+	clear: both;
+	
+}
+
+.coments .imgperfil{
+	float: left;
+	margin: 20px 15px 0 0;
+
+}
+.coments .imgperfil img{
+	float: left;
+	width:50px;
+	border-radius: 6px;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+}
+.coments .informacion{
+	width: 50%;
+	float: left;
+	border-bottom: solid 2px #ddd;
+	margin: 20px 0 0 0;
+}
+.coments .informacion .nusu{
+	float:left;
+	width: 100%;
+	font-size: 12pt;
+	font-family: sans-serif;
+	font-weight:600;
+	color: #ff5248;
+	text-align: left;
+}
+.coments .informacion .comentario{
+	float: left;
+	text-align: left;
+}
+#comentar{
+	float: left;
+	margin: 20px 20px 20px 0;
+	width: 100%;
+}
+#comentar input{
+	width: 60%;
+}

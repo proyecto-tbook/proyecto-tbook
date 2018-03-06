@@ -19,12 +19,9 @@ app.controller('detalle', function($scope, $http) {
     results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   };
- 
 
-
-  // $scope.verLibro=function(libro){
     var libro = $scope.getParameterByName('lib');
-    // alert(prodId);
+  
     $http({
         method: 'GET',
         url: '../model/verLibro.php',
@@ -40,7 +37,24 @@ app.controller('detalle', function($scope, $http) {
       {
         console.log("Error, al tratar de traer los datos")
       }); 
-    // };
+
+  $scope.Comentar=function(){
+    alert($scope.comentario);
+    $http({
+        method: 'GET',
+        url: '../model/Comentar.php',
+        params: {com: $scope.comentario}
+      })
+      .then(function successCallback(datosDependencias)
+      {
+        $scope.datos = datosDependencias.data.records;
+        console.log(datosDependencias);
+
+      },function errorCallback(datosDependencias)
+      {
+        console.log("Error, al tratar de traer los datos")
+      }); 
+  };
 
 });
 
