@@ -79,12 +79,25 @@ $v1 = $_GET['lib'];
             ?>
             
           </div>
-          <div ng-repeat="data in comentlib">
-            {{data.comentario}}
-          </div>
+          
                        
         </div>
       </div>
+      <div id="t_coment"><h4>Comentarios</h4></div>
+      <div class="coments" ng-repeat="data in comentlib">
+        <div class="imgperfil">
+          <img src="../assets/img/usuario/{{data.img_per}}">
+          
+        </div>
+        <div class="informacion">
+          <span class="nusu">{{data.n_usuario}}</span><br>
+          <span class="comentario">{{data.comentario}}</span>
+        </div>
+      </div>
+      <br>
+      <form class="form-inline ng-pristine ng-valid" id="comentar">
+        <input class="form-control mr-sm-2" type="text" placeholder="Comentar ..." ng-keyup="$event.keyCode == 13 && Comentar()" ng-model="comentario">
+      </form>
     </div> 
 
        
