@@ -150,3 +150,80 @@ clear: both;
 	
 	
 }
+
+/*ESTILOS LIBROS BIBLIOTECAS*/
+#_cuerpo{
+	width: 85%;
+	margin: auto;
+	text-align: center;
+	
+
+}
+
+#_titulo_ultimos{
+	padding: 3% 0% 0% 3%;
+	text-align: left;
+	border-bottom: 2px solid #000;
+}
+#_cuerpo article{
+	float: left;
+	padding-top:2%;
+	margin: auto;
+	width: 20%;
+	height: 300px;
+
+}
+._img_container{
+	width: 80%;
+	height: 200px;
+	/*background-color:rgba(75,75,75,0.3);*/
+	margin: auto;
+	border-left: solid aliceblue;
+	border-right: solid aliceblue;
+	border-top: solid aliceblue;
+
+}
+._img_container img{
+	height: 100%;
+	margin: auto;
+	
+}
+
+#_datos{ 
+	/*background: #f0edea;*/
+	width: 80%;
+	margin: auto;
+	border-left: solid aliceblue;
+	border-right: solid aliceblue;
+	border-bottom: solid aliceblue;
+}
+#_datos h3{
+	font-size: 12pt;
+	height: 10pt;
+}
+#_datos a span{
+	/*text-decoration: none;*/
+	color: #ff5248;
+	font-size: 11pt;	
+}
+#_datos a span:hover{
+	text-decoration: underline;	
+}
+
+#_datos span{
+	font-size: 15pt;
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+	 
+}
+#_cuerpo a{
+	font-size: 10pt; 
+	/*background-color:#a1d11c; */
+	/*color: #fff;*/
+	border: none;
+	margin: auto;
+	width: 100%;
+	
+}

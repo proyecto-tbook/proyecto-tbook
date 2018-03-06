@@ -1,5 +1,5 @@
 
-var app = angular.module('app');
+var app = angular.module('app',[]);
 
 
 
@@ -10,6 +10,11 @@ app.controller('modeloReciente', function($scope,$http) {
     });
    
     
+});
+app.controller('Ctrl_Libros_Categorias', function($scope, $http) {
+    $http.get("../model/libros_categorias_mysql.php")
+    .then(function (response) {$scope.librosCategorias = response.data.records;        
+    });
 });
 app.controller('detalle', function($scope, $http) {
  
