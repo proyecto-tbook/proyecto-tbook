@@ -16,7 +16,7 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
         $scope.names = datosDependencias.data.records;
         //$window.location.href='edit_user.html';
         console.log(datosDependencias);
-        $window.location.href='edit_user.html';
+      //  $window.location.href='edit_user.html';
        // $location.path('edit_user.html');
 
       },function errorCallback(datosDependencias)

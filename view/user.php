@@ -124,7 +124,7 @@ $users=  getUsuario($fullname);
 			</p>
 
 		</div>
-		
+		<a href="edit_user.html?lib='<?php echo $users[3]; ?>'" class="btn btn-danger" ng-click="show_edit('<?php echo $users[3]; ?>')">editar</a>
 		<button class="btn btn-danger" ng-click="show_edit('<?php echo $users[3]; ?>')" ng-hide="date">EDITAR</button>
 		
 		
