@@ -15,5 +15,3 @@ $conneccion->close();
 echo($result);
 
 ?>
-
-INSERT INTO `t-book`.`comentario` (`idComentario`, `Comentario`, `Fecha_comen`, `Hora_comen`, `Libro_idLibro`, `idUsuario`) VALUES (NULL, 'dfsdfsdafgsdfsdfasdcxccscsc', '2018-03-15', '05:33:16', '3', '3');
