@@ -20,7 +20,7 @@ $users=  getUsuario($fullname);
 	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/star-rating.css">
-	<script src="../resourse/jquery/jquery-3.3.1.min.js"></script>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>	
@@ -33,7 +33,7 @@ $users=  getUsuario($fullname);
 	<script type="text/javascript" src="../assets/js/opc_avatar.js"></script>
 
 </head>
-<body ng-app='app' ng-controller='controlador'>
+<body ng-app='app' ng-controller='ctrlUsuario'>
 	<header>
 		<?php
     		include("../view/menu.html");
@@ -100,7 +100,7 @@ $users=  getUsuario($fullname);
 				<label>
 					Nombre:
 				</label>
-				<label>
+				<label >
 					<?php print_r($users[0]);?>
 				</label>
 			</p>
@@ -108,21 +108,25 @@ $users=  getUsuario($fullname);
 				<label>
 					Apellido:
 				</label>
-				<label>
+				<label >
 				<?php print_r($users[1]);?>
 				</label>
+				
 			</p>
 			<p>
 				<label>
 					Correo:
 				</label>
-				<label>
+				<label >
 				<?php print_r($users[2]);?>
 				</label>
+				
 			</p>
 
 		</div>
-		<button class="btn btn-danger">EDITAR</button>
+		
+		<button class="btn btn-danger" ng-click="show_edit('<?php echo $users[3]; ?>')" ng-hide="date">EDITAR</button>
+		
 		
 	</div>
 	<br>

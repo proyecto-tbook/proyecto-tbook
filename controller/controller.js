@@ -1,19 +1,35 @@
-app.controller('ctrlUsuario', function($scope, $http, $location){
-	
-	
-	//$scope.getUsuario=function(){
-		//$scope.nombUser=$scope.user;
-		//alert($scope.nombUser);
-		$http.post('../modelos/usuario.php').then(function (result){
-      
-        $scope.usuarios = result.data.perfil;
-        console.log(result);
-        	
-     //   window.location='../view/usuario.html';
-       // $location.path('../view/usuario.html');
-       
-	});
+app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 
-	//}
+	$scope.show_edit=function (us){
+		//alert(us);
+		
+		$scope.dat=us;
+		$http({
+        method: 'GET',
+        url: '../controller/edit_us.php',
+        params: {id: $scope.dat}
+
+      })
+      .then(function successCallback(datosDependencias)
+      {
+
+        $scope.names = datosDependencias.data.records;
+        //$window.location.href='edit_user.html';
+        console.log(datosDependencias);
+        $window.location.href='edit_user.html';
+       // $location.path('edit_user.html');
+
+      },function errorCallback(datosDependencias)
+      {
+      	//alert(datosDependencias);
+        console.log("Error, al tratar de traer los datos")
+      }); 
+	
+
+	}
+	$scope.save= function (){
+		$scope.date=false;
+		$scope.usuario=user;
+	}
+
 });
-
