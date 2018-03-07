@@ -81,10 +81,10 @@ session_start();
 
         <div id="titulo_ultimos" ><h2>Ultimos añadidos</h2>
         </div>
-        <article ng-repeat="x in names">
+        <article ng-repeat="x in names" >
           <div >
           <div class='img_container'>
-            <img src="assets/img/libros/{{x.dir_img}}">
+            <img src="assets/img/libros/{{x.dir_img}}" >
           </div>
           <div id='datos'>
             <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
