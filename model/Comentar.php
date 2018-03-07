@@ -12,6 +12,7 @@ $result = $conneccion->query("SELECT idUsuario FROM usuario where Nombre_Usuario
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $id_user=$rs['idUsuario'];
 }
+// Alex
 
 $sql = "INSERT INTO comentario (Comentario, Fecha_comen, Hora_comen, Libro_idLibro, idUsuario) " +
   "VALUES ('$coment', '2018-03-15', '05:33:16','1','$id_user')";
