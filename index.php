@@ -90,7 +90,7 @@ session_start();
             <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
             <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
             
-            <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" ng-model="servicio.datosCompartidos" ng-click="servicio.anadirElemento(x.lib_id)">Ver ></a>
+            <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" >Ver ></a>
           <!--  -->
           </div>
           
