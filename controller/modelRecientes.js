@@ -38,12 +38,13 @@ app.controller('detalle', function($scope, $http) {
         console.log("Error, al tratar de traer los datos")
       }); 
 
-  $scope.Comentar=function(){
-    alert($scope.comentario);
+  $scope.Comentar=function(usuario){
+    alert(usuario);
+    $scope.user=usuario;
     $http({
         method: 'GET',
         url: '../model/Comentar.php',
-        params: {com: $scope.comentario}
+        params: {com: $scope.comentario,usu:$scope.user}
       })
       .then(function successCallback(datosDependencias)
       {
