@@ -33,7 +33,7 @@ $users=  getUsuario($fullname);
 	<script type="text/javascript" src="../assets/js/opc_avatar.js"></script>
 
 </head>
-<body ng-app='app' ng-controller='ctrlUsuario'>
+<body ng-app='app' ng-controller='controlador'>
 	<header>
 		<?php
     		include("../view/menu.html");
@@ -124,8 +124,8 @@ $users=  getUsuario($fullname);
 			</p>
 
 		</div>
-		<a href="edit_user.html?lib='<?php echo $users[3]; ?>'" class="btn btn-danger" ng-click="show_edit('<?php echo $users[3]; ?>')">editar</a>
-		<button class="btn btn-danger" ng-click="show_edit('<?php echo $users[3]; ?>')" ng-hide="date">EDITAR</button>
+		<a href="edit_user.html?lib='<?php echo $users[3];?>'" class="btn btn-danger" ng-click="show_edit('<?php echo $users[3]; ?>')"  >editar</a>
+		<button class="btn btn-danger" ng-model="us" ng-click="show_edit('<?php echo $users[3]; ?>')" ng-hide="date">EDITAR</button>
 		
 		
 	</div>

@@ -1,6 +1,33 @@
 var app = angular.module('app');
 app.controller('controlador', function($scope, $http) {
+$scope.show_edit=function (us){
+   
+    
+    $scope.dat=us;
+    alert($scope.dat);
+    $http({
+        method: 'GET',
+        url: 'edit_us.php',
+        params: {id: $scope.dat}
 
+      })
+      .then(function successCallback(datosDependencias)
+      {
+
+        $scope.names = datosDependencias.data.records;
+        //$window.location.href='edit_user.html';
+        console.log(datosDependencias);
+      //  $window.location.href='edit_user.html';
+       // $location.path('edit_user.html');
+
+      },function errorCallback(datosDependencias)
+      {
+       
+        console.log("Error, al tratar de traer los datos")
+      }); 
+  
+
+  }
    
 
   $scope.ver_libros=function(user){
