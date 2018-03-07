@@ -99,7 +99,7 @@ $v1 = $_GET['lib'];
         <?php
                if(isset($_SESSION['fullname'])){
                   $user=$_SESSION['fullname'];
-                  echo "<input class='form-control mr-sm-2' type='text' placeholder='Comentar ...' ng-model='comentario' ng-keyup='\$event.keyCode == 13 && Comentar(\"$user\")' >";
+                  echo "<input class='form-control mr-sm-2' type='text' placeholder='Comentar ...' ng-model='comentario' ng-keyup='\$event.keyCode == 13 && Comentar(\"$user\")'>";
                 }
             ?>
         

@@ -20,8 +20,9 @@ app.controller('detalle', function($scope, $http) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   };
 
-    var libro = $scope.getParameterByName('lib');
-  
+  var libro = $scope.getParameterByName('lib');
+    
+  $scope.Cargar=function(){
     $http({
         method: 'GET',
         url: '../model/verLibro.php',
@@ -37,24 +38,35 @@ app.controller('detalle', function($scope, $http) {
       {
         console.log("Error, al tratar de traer los datos")
       }); 
+    };
+
+  $scope.Cargar();
 
   $scope.Comentar=function(usuario){
-    alert(usuario);
-    $scope.user=usuario;
-    $http({
-        method: 'GET',
-        url: '../model/Comentar.php',
-        params: {com: $scope.comentario,usu:$scope.user}
-      })
-      .then(function successCallback(datosDependencias)
-      {
-        $scope.datos = datosDependencias.data.records;
-        console.log(datosDependencias);
+    if($scope.comentario==null){
+      alert("ERROR: No puede ingresar un comentario vacío!");
+    }else{
+      $scope.user=usuario;
+      $http({
+          method: 'GET',
+          url: '../model/Comentar.php',
+          params: {com: $scope.comentario,usu:$scope.user,lib:libro}
+        })
+        .then(function successCallback(datosDependencias)
+        {
+          $scope.Cargar();
+          $scope.comentario="";
+          $scope.datos = datosDependencias.data.records;
+          console.log(datosDependencias);
 
-      },function errorCallback(datosDependencias)
-      {
-        console.log("Error, al tratar de traer los datos")
-      }); 
+        },function errorCallback(datosDependencias)
+        {
+          console.log("Error, al tratar de traer los datos")
+        }); 
+    
+        
+        
+     }
   };
 
 });
