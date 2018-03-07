@@ -74,6 +74,24 @@ app.controller('detalle', function($scope, $http) {
      }
   };
 
+  $scope.Eliminar=function(idComent){
+    $http({
+        method: 'GET',
+        url: '../model/eliminar_comentario.php',
+        params: {id: idComent}
+      })
+      .then(function successCallback(datosDependencias)
+      {
+        $scope.Cargar();
+        $scope.datos = datosDependencias.data.records;
+        console.log(datosDependencias);
+
+      },function errorCallback(datosDependencias)
+      {
+        console.log("Error, al tratar de traer los datos")
+      }); 
+    };
+
 });
 
 

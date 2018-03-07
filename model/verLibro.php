@@ -17,7 +17,13 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"imagen":"'   . $rs["Imagen"]        . '",';
     $outp .= '"autor":"'   . $rs["Autor"]        . '",';
     $outp .= '"descripcion":"'   . $rs["Descripcion"]        . '",';
-    $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
+   
+
+    $us = $conneccion->query("SELECT usuario.Nombre_Usuario FROM usuario where usuario.idUsuario=".$rs["Usuario_idUsuario1"]);
+    while($rsu = $us->fetch_array(MYSQLI_ASSOC)) {
+        $outp .= '"correo_user":"'  . $rsu['Nombre_Usuario'] . '",';
+    }
+     $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
 
 }
 $resultcoment = $conneccion->query("SELECT * FROM comentario where Libro_idLibro=".$id_Libro);
@@ -29,15 +35,16 @@ while($rs = $resultcoment->fetch_array(MYSQLI_ASSOC)) {
     }
     
 
-    $usuarios = $conneccion->query("SELECT persona.Nombre, persona.Img_persona FROM persona,usuario where persona.idPersona=usuario.Persona_idPersona AND usuario.idUsuario=".$rs["idUsuario"]);
+    $usuarios = $conneccion->query("SELECT persona.Nombre, persona.Img_persona, usuario.Nombre_Usuario FROM persona,usuario where persona.idPersona=usuario.Persona_idPersona AND usuario.idUsuario=".$rs["idUsuario"]);
     while($rsu = $usuarios->fetch_array(MYSQLI_ASSOC)) {
 
         $outp2 .= '{"n_usuario":"'  . $rsu['Nombre'] . '",';
+        $outp2 .= '"name_user":"'  . $rsu['Nombre_Usuario'] . '",';
         $outp2 .= '"img_per":"'. $rsu["Img_persona"]     . '",';
 
     }
 
-
+    $outp2 .= '"id_coment":"'  . $rs['idComentario'] . '",';
     $outp2 .= '"comentario":"'  . $rs['Comentario'] . '",';
     $outp2 .= '"id_usu":"'. $rs["idUsuario"]     . '"}';
 

@@ -31,7 +31,7 @@
 .detalles div span{
 	color:#ff5248;
 }
-#cuerpo  .detalles > a:not(.botonr){
+#cuerpo  .detalles > div > a:not(.botonr){
 	float: right;
 	font-size: 16pt;
 	font-weight: 600;
@@ -39,6 +39,7 @@
 	text-decoration: none;
 	color: #fff;
 	background-color: #ff5248;
+	text-align: center;
 	margin-right: 8%; 
 	padding: 7px px;
 	border-radius: 6px;
@@ -89,7 +90,7 @@ width: 100%;
 }
 .coments .informacion .nusu{
 	float:left;
-	width: 100%;
+	width: 80%;
 	font-size: 12pt;
 	font-family: sans-serif;
 	font-weight:600;
@@ -107,4 +108,18 @@ width: 100%;
 }
 #comentar input{
 	width: 60%;
+}
+
+#elimina_coment a{
+	float: right;
+	font-size: 10pt;
+	font-weight: 600;
+	width: 11%;
+	text-decoration: none;
+	color: #fff;
+	background-color: #28a745;
+	padding: 5px 5px;
+	border-radius: 6px;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
 }

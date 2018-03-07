@@ -70,14 +70,15 @@ $v1 = $_GET['lib'];
             <div>Autor: <span>{{data.autor}}</span></div>
             <div>Fecha de Publicación: <span>{{data.f_public}}</span></div>
             <div id="desc">{{data.descripcion}}</div>
-            <?php
-               if(isset($_SESSION['fullname'])){
-                  echo "<a id='verLibro' href='#'   class='boton'>Pedir</a>";
-                }
-                else
-                  echo "<span style='font-size:10pt;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
-            ?>
-            
+            <div ng-if="'<?php echo $_SESSION['fullname'] ?>' != data.correo_user">
+              <?php
+                   if(isset($_SESSION['fullname'])){
+                      echo "<a id='verLibro' href='#'   class='boton'>Pedir</a>";
+                    }
+                    else
+                      echo "<span style='font-size:10pt;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
+                ?>
+            </div>
           </div>
           
                        
@@ -88,9 +89,14 @@ $v1 = $_GET['lib'];
         <div class="imgperfil">
           <img src="../assets/img/usuario/{{data.img_per}}">
           
+          
         </div>
         <div class="informacion">
-          <span class="nusu">{{data.n_usuario}}</span><br>
+          <span class="nusu">{{data.n_usuario}}</span>
+          <div id="elimina_coment" ng-if="'<?php echo $_SESSION['fullname'] ?>' == data.name_user">
+              <!--hacemos todo lo que queramos-->
+              <a href='' ng-click = "Eliminar(data.id_coment)">borrar</a>  
+          </div>
           <span class="comentario">{{data.comentario}}</span>
         </div>
       </div>
