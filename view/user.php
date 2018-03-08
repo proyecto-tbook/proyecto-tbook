@@ -124,6 +124,7 @@ $users=  getUsuario($fullname);
 		</div>
 		<button class="btn btn-danger">EDITAR</button>
 		
+		
 	</div>
 	<br>
 	<br>
@@ -133,7 +134,7 @@ $users=  getUsuario($fullname);
 </div>
 		
 	
-	<div ng-view></div>
+	<div ng-view style="display: block;clear: left;"></div>
 
 </body>
 

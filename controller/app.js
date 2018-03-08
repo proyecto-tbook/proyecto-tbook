@@ -15,7 +15,14 @@ app.config(function($routeProvider/*$locationProvider*/){
 			templateUrl: '../view/presentar_libro.html',
 			controller: 'controlador'
 		})
-		
+		.when('/update',{
+			templateUrl: '../view/update.html',
+			controller: 'controlador'
+		})
+		.when('/new_book',{
+			templateUrl: '../view/new_book.html',
+			controller: 'controlador'
+		})
 		
 		
 		
