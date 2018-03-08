@@ -4,6 +4,8 @@
      header("Content-Type: application/json; charset=UTF-8");
 	 header('Content-Type: text/html; charset=UTF-8');
 
+	 require("conexion.php");
+
 	$datos=json_decode(file_get_contents("php://input"));
 
 	 $titulo = $datos->titulo;
@@ -19,7 +21,7 @@
 
 	
 
-	require("conexion.php");
+	
 	$sql = "INSERT INTO libro (titulo, imagen, autor, F_publicacion, Descripcion, Restriccion, Usuario_idUsuario1 ) " +
 	  "VALUES ('$titulo', '$imagen', '$autor', '$F_publicacion','Descripcion',$restriccion, $usuadio)";
 	$result = mysql_query($sql);
