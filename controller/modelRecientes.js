@@ -50,7 +50,7 @@ app.controller('Ctrl_Solicitar_Libro', function($scope, $http) {
                   user_logged: persona_logueo,
                   title: titulo}
         })
-        .then(function successCallback(datosDependencias)
+        .then(function successCallback()
         {          
           alert("SU PETICION HA SIDO ENVIADA SATISFACTORIAMENTE.");
         });

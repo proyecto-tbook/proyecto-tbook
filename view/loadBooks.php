@@ -70,14 +70,13 @@ and open the template in the editor.
             </div>            
             <center>                
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">                        
-                        <div class="carousel-item active" > 
+                    <div class="carousel-item active" ng-repeat="x in names | limitTo: 1"> 
                             <table cellpadding="10">
                                 <tr>
-                                    <th ng-repeat="x in names">
-                                        <div class="card" style="width: 18rem;">
+                                    <th >
+                                        <div class="card d-block w-100" style="width: 68rem;">
                                             <center>
-                                            <img style="max-width:200px;" class="card-img-top" src="../assets/img/libros/{{x.imagen}}">
+                                            <img style="max-width:200px;" class="card-img-top " src="../assets/img/libros/{{x.imagen}}">
                                             </center>
                                             <div class="card-body">
                                                 <h5 class="card-title">{{x.nombre}}</h5>
@@ -87,28 +86,40 @@ and open the template in the editor.
                                     </th>
                                 </tr>
                             </table>
-                        </div>
-                        <!--                        <div class="carousel-item" ng-repeat="x in names" ng-if="$index > 0">
-                                                    <table cellpadding="10">
-                                                        <tr>
-                                                            <th>
-                                                                <div class="card" style="width: 18rem;">
-                                                                    <img class="card-img-top" src="{{x.imagen}}">
-                                                                    <div class="card-body">
-                                                                        <h5 class="card-title">{{x.nombre}}</h5>
-                                                                        <p class="card-text">{{x.descripcion}}</p>
-                                                                        <a href="#" class="btn btn-primary">{{x.autor}}</a>
-                                                                    </div>
-                                                                </div>
-                                                            </th>
-                                                        </tr>
-                                                    </table>
-                                                </div>-->
-                    </div>
+                        </div>                       
+                    <div class="carousel-inner">                        
+                        <div class="carousel-item" ng-repeat="x in names "> 
+                            <table cellpadding="10">
+                                <tr>
+                                    <th >
+                                        <div class="card d-block w-100" style="width: 18rem;">
+                                            <center>
+                                            <img style="max-width:200px;" class="card-img-top " src="../assets/img/libros/{{x.imagen}}">
+                                            </center>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{x.nombre}}</h5>
+                                                <a id="verLibro" href="../view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" >Ver ></a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>                       
+                    </div>                    
                 </div>
                 <a class="btn btn-lg btn-secondary" href="./../index.php">Regresar</a>
             </center>
-        </div> 
+        </div>
+
+        <div>
+            <div id="auspiciantes" style="margin-top: 1%;">
+                <div id="img_aus">
+                  <img src="../assets/img/auspiciantes/unl.png">
+                  <img src="../assets/img/auspiciantes/cce.png">
+                </div>
+            </div>
+        </div>
+
         <footer style="background: #ff5248; color: white; text-align: center">
             <div class="row">
                 <div class="col-md-4">
@@ -134,5 +145,11 @@ and open the template in the editor.
                 <span style="width:100%; text-align: right; font-size:12pt; padding-bottom:24px;">tbook-Todos los derechos reservados</span>                         
             </div> 
         </footer>
+        <!-- Modal -->   
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <?php
+          include 'login.php';
+          ?>
+        </div>
     </body>
 </html>
