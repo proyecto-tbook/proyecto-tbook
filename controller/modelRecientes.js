@@ -1,5 +1,5 @@
 
-var app = angular.module('app');
+var app = angular.module('app',[]);
 
 
 
@@ -11,6 +11,53 @@ app.controller('modeloReciente', function($scope,$http) {
    
     
 });
+
+// Critihian
+app.controller('cargarLibros', function($scope, $http) {    
+    $scope.load = function (categoria) {                
+        $http.get("../model/loadbooks.php?categoria="+categoria)
+            .then(function (response) {     
+            $scope.names = response.data.records;
+            console.log(response);
+            });
+    }
+});
+// fin Cristhian
+app.controller('Ctrl_Libros_Categorias', function($scope, $http) {
+    $http.get("../model/libros_categorias_mysql.php")
+    .then(function (response) {$scope.librosCategorias = response.data.records;        
+    });
+});
+
+app.directive("mensajeEnvio", function(){
+   return {
+       template:'<div class="alert alert-success alert-dismissible fade show" role="alert" style="display: block; clear: left;">'
+            +'<strong>EXITO!</strong> Tu peticion ha sido enviada exitosamente.'
+            +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+             + '<span aria-hidden="true">&times;</span>'
+            +'</button>'
+          +'</div>'
+   };
+});
+app.controller('Ctrl_Solicitar_Libro', function($scope, $http) {      
+    $scope.solicitarLibro=function(persona_logueo)    {       
+        var emailPropietario=$scope.detallelibro[0].emailPropietario;
+        var titulo=$scope.detallelibro[0].titulo;
+        $http({
+          method: 'GET',
+          url: '../model/enviar_correo_peticion.php',
+          params: {email: emailPropietario,
+                  user_logged: persona_logueo,
+                  title: titulo}
+        })
+        .then(function successCallback()
+        {          
+          alert("SU PETICION HA SIDO ENVIADA SATISFACTORIAMENTE.");
+        });
+      };           
+      
+});
+
 app.controller('detalle', function($scope, $http) {
  
   $scope.getParameterByName=function(name) {
@@ -20,8 +67,9 @@ app.controller('detalle', function($scope, $http) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   };
 
-    var libro = $scope.getParameterByName('lib');
-  
+  var libro = $scope.getParameterByName('lib');
+    
+  $scope.Cargar=function(){
     $http({
         method: 'GET',
         url: '../model/verLibro.php',
@@ -37,16 +85,46 @@ app.controller('detalle', function($scope, $http) {
       {
         console.log("Error, al tratar de traer los datos")
       }); 
+    };
 
-  $scope.Comentar=function(){
-    alert($scope.comentario);
+  $scope.Cargar();
+
+  $scope.Comentar=function(usuario){
+    if($scope.comentario==null){
+      alert("ERROR: No puede ingresar un comentario vacío!");
+    }else{
+      $scope.user=usuario;
+      $http({
+          method: 'GET',
+          url: '../model/Comentar.php',
+          params: {com: $scope.comentario,usu:$scope.user,lib:libro}
+        })
+        .then(function successCallback(datosDependencias)
+        {
+          $scope.Cargar();
+          $scope.comentario="";
+          $scope.datos = datosDependencias.data.records;
+          console.log(datosDependencias);
+
+        },function errorCallback(datosDependencias)
+        {
+          console.log("Error, al tratar de traer los datos")
+        }); 
+    
+        
+        
+     }
+  };
+
+  $scope.Eliminar=function(idComent){
     $http({
         method: 'GET',
-        url: '../model/Comentar.php',
-        params: {com: $scope.comentario}
+        url: '../model/eliminar_comentario.php',
+        params: {id: idComent}
       })
       .then(function successCallback(datosDependencias)
       {
+        $scope.Cargar();
         $scope.datos = datosDependencias.data.records;
         console.log(datosDependencias);
 
@@ -54,7 +132,7 @@ app.controller('detalle', function($scope, $http) {
       {
         console.log("Error, al tratar de traer los datos")
       }); 
-  };
+    };
 
 });
 

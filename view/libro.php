@@ -36,7 +36,7 @@ $v1 = $_GET['lib'];
   	
   </head>
   <body ng-app="app" ng-controller="detalle">
-  	<header>
+  	<header style="position: relative;">
     <?php include("menu.html");?>
   	</header>
 
@@ -69,34 +69,53 @@ $v1 = $_GET['lib'];
             <h1>{{data.titulo}}</h1>
             <div>Autor: <span>{{data.autor}}</span></div>
             <div>Fecha de Publicación: <span>{{data.f_public}}</span></div>
+            <div>Publicado por: <span>{{data.nomb_user}}</span></div>
             <div id="desc">{{data.descripcion}}</div>
-            <?php
-               if(isset($_SESSION['fullname'])){
-                  echo "<a id='verLibro' href='#'   class='boton'>Pedir</a>";
-                }
-                else
-                  echo "<span style='font-size:10pt;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
-            ?>
-            
+            <div ng-if="'<?php echo $_SESSION['fullname'] ?>' != data.correo_user">
+              <?php
+                   if(isset($_SESSION['fullname'])){
+                    $usuario=$_SESSION['fullname'];
+                    echo "<a id='verLibro' href='#'   class='boton' ng-controller='Ctrl_Solicitar_Libro' ng-click='solicitarLibro(\"$usuario\")'>Pedir</a>";                    
+                    }
+                    else
+                      echo "<span style='font-size:10pt; color:#000;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
+                ?>
+            </div>
           </div>
           
                        
         </div>
       </div>
+
+      <!-- MOSTRAR MENSAJE -->      
+      <!-- <div mensaje-envio ng-controller="Ctrl_Solicitar_Libro" id="pedir">                
+      </div> -->
+      
       <div id="t_coment"><h4>Comentarios</h4></div>
       <div class="coments" ng-repeat="data in comentlib">
         <div class="imgperfil">
           <img src="../assets/img/usuario/{{data.img_per}}">
           
+          
         </div>
         <div class="informacion">
-          <span class="nusu">{{data.n_usuario}}</span><br>
+          <span class="nusu">{{data.n_usuario}}</span>
+          <div id="elimina_coment" ng-if="'<?php echo $_SESSION['fullname'] ?>' == data.name_user">
+              <!--hacemos todo lo que queramos-->
+              <a href='' ng-click = "Eliminar(data.id_coment)">borrar</a>  
+          </div>
           <span class="comentario">{{data.comentario}}</span>
         </div>
       </div>
       <br>
       <form class="form-inline ng-pristine ng-valid" id="comentar">
-        <input class="form-control mr-sm-2" type="text" placeholder="Comentar ..." ng-keyup="$event.keyCode == 13 && Comentar()" ng-model="comentario">
+        <?php
+               if(isset($_SESSION['fullname'])){
+                  $user=$_SESSION['fullname'];
+                  echo "<input class='form-control mr-sm-2' type='text' placeholder='Comentar ...' ng-model='comentario' ng-keyup='\$event.keyCode == 13 && Comentar(\"$user\")'>";
+                }
+            ?>
+        
       </form>
     </div> 
 

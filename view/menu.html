@@ -2,7 +2,7 @@
 
 
 <div class='menu_bar'>
-	<a href='http://localhost:8080/tbookV3' class='bt-menu'><span class='icon-menu'></span>TBOOK</a>
+	<a href='\tbookV3' class='bt-menu'><span class='icon-menu'></span>TBOOK</a>
 	<div id='div_form' class='navbar navbar-light bg-light'>
 		<form class='form-inline'>
 			<input class='form-control mr-sm-2' type='search' placeholder='Buscar libros ...' aria-label='Search'>
@@ -13,13 +13,14 @@
 <nav>
 	<ul>
 	<li><a href='\tbookV3/index.php'>Inicio </a></li>
-	<li><a href='intermedio_acceder_doc.php'><span class='icon-user-tie'></span>Biblioteca</a>
+	<li><a href='\tbookV3\view\biblioteca.php'><span class='icon-user-tie'></span>Biblioteca</a>
 		<ul>
-            <li><a href="#" target="_self" >Poesia</a></li>
-            <li><a href="#" target="_self" >Novela</a></li>
-            <li><a href="#" target="_self" >Literatura</a></li>
-            <li><a href="#" target="_self" >Filosofia</a></li>
+            <li><a href="\tbookV3/view/loadBooks.php?categoria=Poesia" target="_self" >Poesia</a></li>
+            <li><a href="\tbookV3/view/loadBooks.php?categoria=Novelas" target="_self" >Novelas</a></li>
+            <li><a href="\tbookV3/view/loadBooks.php?categoria=Literatura" target="_self" >Literatura</a></li>
+            <li><a href="\tbookV3/view/loadBooks.php?categoria=Filosofia" target="_self" >Filosofia</a></li>
 	    </ul>
+
 	</li>
 	<li><a href='#'><span class='icon-phone'></span>Politicas</a></li>
 	<li><a id='registrarse' class='registrate'  data-toggle='modal' style='margin-left: 10%' data-target='#myModal' href='./view/login.php'>Iniciar Sesión</a></li>

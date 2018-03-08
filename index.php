@@ -81,16 +81,16 @@ session_start();
 
         <div id="titulo_ultimos" ><h2>Ultimos añadidos</h2>
         </div>
-        <article ng-repeat="x in names">
+        <article ng-repeat="x in names" >
           <div >
           <div class='img_container'>
-            <img src="assets/img/libros/{{x.dir_img}}">
+            <img src="assets/img/libros/{{x.dir_img}}" >
           </div>
           <div id='datos'>
-            <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
+            <h4>{{x.Titulo| cut:true:30:' ...'}}</h4>
             <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
             
-            <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" ng-model="servicio.datosCompartidos" ng-click="servicio.anadirElemento(x.lib_id)">Ver ></a>
+            <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" >Ver ></a>
           <!--  -->
           </div>
           
