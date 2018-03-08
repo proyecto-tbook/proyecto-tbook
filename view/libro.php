@@ -69,6 +69,7 @@ $v1 = $_GET['lib'];
             <h1>{{data.titulo}}</h1>
             <div>Autor: <span>{{data.autor}}</span></div>
             <div>Fecha de Publicación: <span>{{data.f_public}}</span></div>
+            <div>Publicado por: <span>{{data.nomb_user}}</span></div>
             <div id="desc">{{data.descripcion}}</div>
             <div ng-if="'<?php echo $_SESSION['fullname'] ?>' != data.correo_user">
               <?php
@@ -76,7 +77,7 @@ $v1 = $_GET['lib'];
                       echo "<a id='verLibro' href='#'   class='boton'>Pedir</a>";
                     }
                     else
-                      echo "<span style='font-size:10pt;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
+                      echo "<span style='font-size:10pt; color:#000;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
                 ?>
             </div>
           </div>
