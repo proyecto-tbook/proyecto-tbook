@@ -11,6 +11,18 @@ app.controller('modeloReciente', function($scope,$http) {
    
     
 });
+
+// Critihian
+app.controller('cargarLibros', function($scope, $http) {    
+    $scope.load = function (categoria) {                
+        $http.get("../model/loadbooks.php?categoria="+categoria)
+            .then(function (response) {     
+            $scope.names = response.data.records;
+            console.log(response);
+            });
+    }
+});
+// fin Cristhian
 app.controller('Ctrl_Libros_Categorias', function($scope, $http) {
     $http.get("../model/libros_categorias_mysql.php")
     .then(function (response) {$scope.librosCategorias = response.data.records;        
