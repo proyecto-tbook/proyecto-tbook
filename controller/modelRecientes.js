@@ -28,6 +28,36 @@ app.controller('Ctrl_Libros_Categorias', function($scope, $http) {
     .then(function (response) {$scope.librosCategorias = response.data.records;        
     });
 });
+
+app.directive("mensajeEnvio", function(){
+   return {
+       template:'<div class="alert alert-success alert-dismissible fade show" role="alert" style="display: block; clear: left;">'
+            +'<strong>EXITO!</strong> Tu peticion ha sido enviada exitosamente.'
+            +'<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+             + '<span aria-hidden="true">&times;</span>'
+            +'</button>'
+          +'</div>'
+   };
+});
+app.controller('Ctrl_Solicitar_Libro', function($scope, $http) {      
+    $scope.solicitarLibro=function(persona_logueo)    {       
+        var emailPropietario=$scope.detallelibro[0].emailPropietario;
+        var titulo=$scope.detallelibro[0].titulo;
+        $http({
+          method: 'GET',
+          url: '../model/enviar_correo_peticion.php',
+          params: {email: emailPropietario,
+                  user_logged: persona_logueo,
+                  title: titulo}
+        })
+        .then(function successCallback(datosDependencias)
+        {          
+          alert("SU PETICION HA SIDO ENVIADA SATISFACTORIAMENTE.");
+        });
+      };           
+      
+});
+
 app.controller('detalle', function($scope, $http) {
  
   $scope.getParameterByName=function(name) {

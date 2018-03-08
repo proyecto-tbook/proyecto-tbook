@@ -1,12 +1,20 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
 <head>
 	<title>Biblioteca</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/style-menu.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style-section.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style-detalle-libro.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="../assets/js/angular.min.js"></script> 
+	<script type="text/javascript" src="../assets/js/angular-route.min.js"></script> 
+	<script type="text/javascript" src="../assets/js/angular-resource.min.js"></script> 
+	<script type="text/javascript" src="../assets/js/opc_avatar.js"></script>
+	<script type="text/javascript" src="../controller/app.js"></script>	
 	<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../controller/modelRecientes.js"></script>
@@ -41,7 +49,7 @@
         	<div ng-repeat="(key,val) in categorias" id="_divCategorias">
         		<div id="_titulo_ultimos" ><h2>{{key}}</h2>
         		</div>
-        		<article ng-repeat="x in val" >	        		        			
+        		<article ng-repeat="x in val | limitTo: 5" >	        		        			
 		          <div >
 		          <div class='_img_container'>
 		            <img src="../assets/img/libros/{{x.dir_img}}">
@@ -65,7 +73,7 @@
 
   	
 	<div>
-		<div id="auspiciantes">
+		<div id="auspiciantes" style="margin-top: 25%;">
 	        <div id="img_aus">
 	          <img src="../assets/img/auspiciantes/unl.png">
 	          <img src="../assets/img/auspiciantes/cce.png">
@@ -97,5 +105,12 @@
 			<span style="width:100%; text-align: right; font-size:12pt; padding-bottom:24px;">tbook-Todos los derechos reservados</span>                         
 	    </div>
 	</footer>
+	<!-- Modal -->   
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <?php
+      include 'login.php';
+      ?>
+
+    </div>
 </body>
 </html>
