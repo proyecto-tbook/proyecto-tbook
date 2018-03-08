@@ -41,7 +41,7 @@ if(!$correo->Send()) {
  */
 require("../assets/sendgrid-php/sendgrid-php.php");
 		require '../assets/sendgrid-php/vendor/autoload.php';
-		$sendgrid = new SendGrid('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');
+		$sendgrid = new SendGrid('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');
 		$email = new SendGrid\Email();
 		$email
 		    ->addTo($u_ibd)
