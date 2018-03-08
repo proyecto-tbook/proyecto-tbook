@@ -19,7 +19,6 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '{"nombre":"'  . $rs['Titulo'] . '",';
     $outp .= '"imagen":"'   . $rs["Imagen"]        . '",';
     $outp .= '"autor":"'   . $rs["Autor"]        . '",';
-    $outp .= '"id_libro":"'   . $rs["idLibro"]        . '",';
     $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
 }
 $outp ='{"records":['.$outp.']}';

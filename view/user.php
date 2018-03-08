@@ -124,7 +124,6 @@ $users=  getUsuario($fullname);
 		<a id="editus" href="edit_user.php?us=<?php echo $users[3];?>" class="btn btn-danger">editar</a>
 		
 		
-		
 	</div>
 	<br>
 	<br>
@@ -134,7 +133,7 @@ $users=  getUsuario($fullname);
 </div>
 		
 	
-	<div ng-view style="display: block;clear: left;"></div>
+	<div ng-view></div>
 
 </body>
 
