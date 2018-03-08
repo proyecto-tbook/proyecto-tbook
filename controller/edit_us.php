@@ -2,11 +2,10 @@
  //print_r("hola");
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
+$id_Punto = $_GET['id']; 
 include "../model/conexion.php";
 
-$id_Punto = $_GET['id']; 
- 
- 
+
  
 
 $result= $conneccion->query("SELECT persona.Nombre, persona.Apellido, usuario.Nombre_Usuario FROM usuario, persona WHERE usuario.idUsuario= \"$id_Punto\" AND usuario.Estado='1' AND persona.idPersona=usuario.persona_idPersona");
