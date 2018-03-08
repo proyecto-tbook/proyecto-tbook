@@ -20,7 +20,7 @@ $users=  getUsuario($fullname);
 	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/star-rating.css">
-	<script src="../resourse/jquery/jquery-3.3.1.min.js"></script>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>	
@@ -60,6 +60,7 @@ $users=  getUsuario($fullname);
 	<div class="panel-heading">
 	<h3 class="panel-title" align="center">Calificación</h3>
 	</div>
+	<!-- estrellas de calificación-->
 	<div class="star panel-body" align="center">
 		
 		<p class="clasificacion star1">
@@ -74,17 +75,13 @@ $users=  getUsuario($fullname);
     	--><input id="radio5" name="estrellas" value="1" type="radio"><!--
     	--><label class="star2" for="radio5">★</label>
   		</p>
-
-
 	</div>
 	</div>
 	<nav class="woocommerce-MyAccount-navigation">
 		<ul class="woocommerce-MyAccount-navigation">
 			<li class="woocommerce-MyAccount-navigation not(.is-active):hover ">
 				<a href="#!perfil" class="camb" ng-click = "ver_libros(' <?php echo $users[3]; ?>')">Mi Biblioteca</a>
-			</li>
-			
-			
+			</li>		
 			
 		</ul>
 	</nav>
@@ -100,7 +97,7 @@ $users=  getUsuario($fullname);
 				<label>
 					Nombre:
 				</label>
-				<label>
+				<label >
 					<?php print_r($users[0]);?>
 				</label>
 			</p>
@@ -108,21 +105,24 @@ $users=  getUsuario($fullname);
 				<label>
 					Apellido:
 				</label>
-				<label>
+				<label >
 				<?php print_r($users[1]);?>
 				</label>
+				
 			</p>
 			<p>
 				<label>
 					Correo:
 				</label>
-				<label>
+				<label >
 				<?php print_r($users[2]);?>
 				</label>
+				
 			</p>
 
 		</div>
-		<button class="btn btn-danger">EDITAR</button>
+		<a id="editus" href="edit_user.php?us=<?php echo $users[3];?>" class="btn btn-danger">editar</a>
+		
 		
 		
 	</div>
