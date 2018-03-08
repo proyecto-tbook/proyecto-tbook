@@ -22,7 +22,7 @@ $http({
      
 
 
-  $scope.save_book = function(datos){
+  $scope.save_book = function(){
     alert($scope.datos);
     $http({
       method: 'GET',
