@@ -22,5 +22,3 @@ $result = $conneccion->query("INSERT INTO comentario (idComentario,Comentario, F
 $conneccion->close();
 
 echo($result);
-
-?>
