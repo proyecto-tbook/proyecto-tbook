@@ -87,7 +87,7 @@ session_start();
             <img src="assets/img/libros/{{x.dir_img}}" >
           </div>
           <div id='datos'>
-            <h3>{{x.Titulo| cut:true:30:' ...'}}</h3>
+            <h4>{{x.Titulo| cut:true:30:' ...'}}</h4>
             <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
             
             <a id="verLibro" href="view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" >Ver ></a>

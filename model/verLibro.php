@@ -24,7 +24,11 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     while($rsu = $us->fetch_array(MYSQLI_ASSOC)) {
         $outp .= '"correo_user":"'  . $rsu['Nombre_Usuario'] . '",';
     }
-     $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
+    $nu = $conneccion->query("SELECT persona.Nombre,persona.Apellido  FROM usuario,persona,libro WHERE libro.Usuario_idUsuario1=usuario.idUsuario and usuario.Persona_idPersona=persona.idPersona and libro.idLibro=$id_Libro");
+    while($rsu = $nu->fetch_array(MYSQLI_ASSOC)) {
+        $outp .= '"nomb_user":"'  . $rsu['Nombre'] . '",';
+    }
+    $outp .= '"f_public":"'. $rs["F_publicacion"]     . '"}';
 
 }
 $resultcoment = $conneccion->query("SELECT * FROM comentario where Libro_idLibro=".$id_Libro);
