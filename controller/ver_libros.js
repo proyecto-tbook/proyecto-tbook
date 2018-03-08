@@ -1,19 +1,17 @@
 var app = angular.module('app');
 app.controller('controlador', function($scope, $http) {
-<<<<<<< HEAD
   
-  
-      $http({
-        method: 'GET',
-        url: '../model/datos.php'
-      }).then(function successCallback(categorias){
-        //alert('obtener valor');
-        $scope.cat = categorias.data.datos_categoria;
-        console.log(categorias);
+      // $http({
+      //   method: 'GET',
+      //   url: '../model/datos.php'
+      // }).then(function successCallback(categorias){
+      //   //alert('obtener valor');
+      //   $scope.cat = categorias.data.datos_categoria;
+      //   console.log(categorias);
 
-      },function errorCallback(categorias){
-        console.log("Error, al tratar de traer los datos")
-      }); 
+      // },function errorCallback(categorias){
+      //   console.log("Error, al tratar de traer los datos")
+      // }); 
      
 
 
@@ -34,8 +32,7 @@ app.controller('controlador', function($scope, $http) {
   }
 
   
-=======
->>>>>>> parent of f961631... archivos
+
   $scope.ver_libros=function(user){
    $scope.id_user = user;
     console.log($scope.id_user);
@@ -53,19 +50,19 @@ app.controller('controlador', function($scope, $http) {
       {
         console.log("Error, al tratar de traer los datos")
       }); 
-<<<<<<< HEAD
-    }
+
+    };
     
     $scope.delet_book= function(id_libro){
       $scope.id_libro = id_libro;
 
     }
-=======
+
 
     // $http.get("../modelos/imagenes.php")
     // .then(function (response) {$scope.names = response.data.records;      
     // });
-    };
     
->>>>>>> parent of f961631... archivos
+    
+
 });
