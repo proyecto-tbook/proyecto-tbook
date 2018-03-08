@@ -6,7 +6,7 @@ header('Content-Type: text/html; charset=UTF-8');
  $id_Libro = $_GET['id']; 
 
 require("conexion.php");
-$result = $conneccion->query("SELECT * FROM libro where idLibro=".$id_Libro);
+$result = $conneccion->query("SELECT usuario.Nombre_Usuario,libro.Titulo,libro.Imagen,libro.Autor,libro.Descripcion,libro.F_publicacion,libro.Usuario_idUsuario1 FROM usuario,libro where libro.idLibro=$id_Libro and usuario.idUsuario=libro.Usuario_idUsuario1");
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -17,6 +17,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"imagen":"'   . $rs["Imagen"]        . '",';
     $outp .= '"autor":"'   . $rs["Autor"]        . '",';
     $outp .= '"descripcion":"'   . $rs["Descripcion"]        . '",';
+    $outp .= '"emailPropietario":"'   . $rs["Nombre_Usuario"]        . '",';
    
 
     $us = $conneccion->query("SELECT usuario.Nombre_Usuario FROM usuario where usuario.idUsuario=".$rs["Usuario_idUsuario1"]);

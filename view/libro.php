@@ -36,7 +36,7 @@ $v1 = $_GET['lib'];
   	
   </head>
   <body ng-app="app" ng-controller="detalle">
-  	<header>
+  	<header style="position: relative;">
     <?php include("menu.html");?>
   	</header>
 
@@ -73,7 +73,8 @@ $v1 = $_GET['lib'];
             <div ng-if="'<?php echo $_SESSION['fullname'] ?>' != data.correo_user">
               <?php
                    if(isset($_SESSION['fullname'])){
-                      echo "<a id='verLibro' href='#'   class='boton'>Pedir</a>";
+                    $usuario=$_SESSION['fullname'];
+                    echo "<a id='verLibro' href='#'   class='boton' ng-controller='Ctrl_Solicitar_Libro' ng-click='solicitarLibro(\"$usuario\")'>Pedir</a>";                    
                     }
                     else
                       echo "<span style='font-size:10pt;'>Para solicitar este libro: </span><a id='verLibro' style='font-size:10pt;' href='/tbookV3'   class='botonr'>Registrate</a>";
@@ -84,6 +85,11 @@ $v1 = $_GET['lib'];
                        
         </div>
       </div>
+
+      <!-- MOSTRAR MENSAJE -->      
+      <!-- <div mensaje-envio ng-controller="Ctrl_Solicitar_Libro" id="pedir">                
+      </div> -->
+      
       <div id="t_coment"><h4>Comentarios</h4></div>
       <div class="coments" ng-repeat="data in comentlib">
         <div class="imgperfil">
