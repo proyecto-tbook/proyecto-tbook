@@ -30,12 +30,12 @@ app.controller('controlador', function($scope, $http) {
 
   $scope.update_book=function(){
     alert('Hola');
-  };
+  }
 
   
   $scope.ver_libros=function(user){
    $scope.id_user = user;
-    console.log($scope.id_user);
+    //console.log($scope.id_user);
     $http({
         method: 'GET',
         url: '../model/imagenes.php',
@@ -44,16 +44,16 @@ app.controller('controlador', function($scope, $http) {
       .then(function successCallback(datosDependencias)
       {
         $scope.names = datosDependencias.data.records;
-        console.log(datosDependencias);
+        //console.log(datosDependencias);
 
       },function errorCallback(datosDependencias)
       {
         console.log("Error, al tratar de traer los datos")
       }); 
-    };
+    }
     
     $scope.delet_book= function(id_libro){
       $scope.id_libro = id_libro;
 
-    };
+    }
 });

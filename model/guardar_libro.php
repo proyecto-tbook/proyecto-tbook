@@ -75,14 +75,14 @@
 // 	}
 
 //establecer error $uploadOk
-	if($uploadOk==0){
-		echo "Lo siento tu imagen no pudo ser enviada";		
-	}else{
-		if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-			echo "El archivo".basename($_FILES["fileToUpload"]["name"])." a sido enviado";
+	// if($uploadOk==0){
+	// 	echo "Lo siento tu imagen no pudo ser enviada";		
+	// }else{
+	// 	if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
+	// 		echo "El archivo".basename($_FILES["fileToUpload"]["name"])." a sido enviado";
 
-		}else{
-			echo "LO siento error al enviar la imagen";
-		}
-	}
+	// 	}else{
+	// 		echo "LO siento error al enviar la imagen";
+	// 	}
+	// }
 ?>

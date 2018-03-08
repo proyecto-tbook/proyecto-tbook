@@ -64,16 +64,16 @@ $users=  getUsuario($fullname);
 	<div class="star panel-body" align="center">
 		
 		<p class="clasificacion star1">
-   			<input id="radio1" name="estrellas" value="5" type="radio"><!--
-    	--><label  class="star2" for="radio1">★</label><!--
-    	--><input id="radio2" name="estrellas" value="4" type="radio"><!--
-    	--><label  class="star2" for="radio2">★</label><!--
-    	--><input id="radio3" name="estrellas" value="3" type="radio"><!--
-    	--><label class="star2" for="radio3">★</label><!--
-    	--><input id="radio4" name="estrellas" value="2" type="radio"><!--
-    	--><label class="star2" for="radio4">★</label><!--
-    	--><input id="radio5" name="estrellas" value="1" type="radio"><!--
-    	--><label class="star2" for="radio5">★</label>
+   			<input id="radio1" name="estrellas" value="5" type="radio">
+    	<label  class="star2" for="radio1">★</label>
+    	<input id="radio2" name="estrellas" value="4" type="radio">
+    	<label  class="star2" for="radio2">★</label>
+    	<input id="radio3" name="estrellas" value="3" type="radio">
+    	<label class="star2" for="radio3">★</label>
+    	<input id="radio4" name="estrellas" value="2" type="radio">
+    	<label class="star2" for="radio4">★</label>
+    	<input id="radio5" name="estrellas" value="1" type="radio">
+    	<label class="star2" for="radio5">★</label>
   		</p>
 	</div>
 	</div>
