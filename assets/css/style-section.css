@@ -198,6 +198,9 @@ clear: both;
 	border-bottom: solid aliceblue;
 }
 #_datos h3{
+	width: 80%;
+	margin-bottom:30px; 
+	margin-top:10px; 
 	font-size: 12pt;
 	height: 10pt;
 }
@@ -212,11 +215,10 @@ clear: both;
 }
 
 #_datos span{
-	font-size: 15pt;
-	width: 100%;
+	color: #ff5248;
+	font-size: 10pt;	
+	padding-right:5px;
 	float: right;
-	text-align: right;
-	margin-right: 10px;
 	 
 }
 #_cuerpo a{
