@@ -30,7 +30,7 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 
       },function errorCallback(datosDependencias)
       {
-        alert(datosDependencias);
+      
         console.log("Error, al tratar de traer los datos")
       }); 
    
@@ -41,7 +41,7 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
   	$scope.edit= function (user){
   		$scope.user=user;
 		if(confirm("esta seguro de guardar")){
-			 alert($scope.user.nombre);
+			 
 			 $http({
 			 	method: 'GET',
 			 	url: '../model/editUser.php',
@@ -51,13 +51,13 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 			 })
 			.then(function successCallback(datosDependencias)
       		{
-      			alert(datosDependencias);
+      			
         		$scope.names = datosDependencias.data.records;
         		console.log(datosDependencias);
 
      		},function errorCallback(datosDependencias)
       		{
-        		alert(datosDependencias);
+        		
         		console.log("Error, al tratar de traer los datos")
       		});
 
@@ -73,27 +73,22 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 	}
 
 });
-app.controller('crtlBusqueda',function($scope, $http){
-	$scope.categorias=[
-	{
-		idcat:1,
-		nombre:"Terror"
-	},
-	{
-		idcat:2,
-		nombre:"Literatura"
-	},
-	{
-		idcat:3,
-		nombre:"Filosofia"
-	},
-	{
-		idcat:4,
-		nombre:"Novela"
-	}
+
+app.controller('crtlBusqueda', function($scope, $http){
+	$scope.categorias = [
+	{ id : "1", nombre : "Terror" },
+	{ id : "2", nombre : "Literatura" },
+	{ id : "3", nombre : "Filosofia" },
+	{ id : "4", nombre : "Novela" }
 	];
-	$scope.cateselect=null;
+	
 
 
-
+});
+app.controller('myCtrl', function($scope) {
+    $scope.cars = [
+        {model : "Ford Mustang", color : "red"},
+        {model : "Fiat 500", color : "white"},
+        {model : "Volvo XC90", color : "black"}
+    ];
 });

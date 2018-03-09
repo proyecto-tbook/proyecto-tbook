@@ -41,7 +41,7 @@ if(!$correo->Send()) {
  */
 require("../assets/sendgrid-php/sendgrid-php.php");
 		require '../assets/sendgrid-php/vendor/autoload.php';
-		$sendgrid = new SendGrid('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');
+		$sendgrid = new SendGrid('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');
 		$email = new SendGrid\Email();
 		$solicitante=$_GET["user_logged"];
 		$title=$_GET["title"];

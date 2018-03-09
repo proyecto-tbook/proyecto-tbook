@@ -57,7 +57,7 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == null) {
 			</p>
 			<p>
 				<label>
-					Correo:
+					Correo: {{usario.correo}}
 				</label>
 				<!--<input type="text" ng-model="usario.correo">-->
 				

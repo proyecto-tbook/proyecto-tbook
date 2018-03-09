@@ -101,7 +101,7 @@ session_start();
       </div>
      
       <div id='btn_biblio'>
-        <a href="">Ir a Biblioteca</a>
+        <a href="view\biblioteca.php">Ir a Biblioteca</a>
       </div>
       <div id="auspiciantes">
         <div id="img_aus">

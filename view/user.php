@@ -131,9 +131,47 @@ $users=  getUsuario($fullname);
 	
 
 </div>
+
+	<div style="clear: both;float: left;">
+		<h1>Biblioteca Personal</h1>
 		
-	
-	<div ng-view></div>
+			<input type="text" name="buscaNombre" ng-model="busqueda" placeholder="Buscar..."><span class="glyphicon glyphicon-search"></span>
+			<button ng-click="new_book(' <?php echo $users[3]; ?>')" class="btn btn-danger">Nuevo Libro</button>
+			<div ng-if='insert' >
+				<?php include("../view/new_book.php");
+				?>
+			</div>
+		
+		
+			<table class="table table-striped" margin="50%" >
+				<tr>
+					<td>Libro</td>
+					<td><a href="" ng-click="ordenar('nombre')">Nombre</a></td>
+					<td><a href="" ng-click="ordenar('autor')">Autor</a></td>
+					<td>Imagen</td>
+					<td>Fecha Publicacion</td>
+					<td>Opciones</td>
+
+
+				</tr>
+				<tr ng-repeat="data in names | orderBy:filtro | filter:busqueda" >
+					<td>{{data.id_libro}}</td>
+					<td>{{data.nombre}}</td>
+					<td>{{data.autor}}</td>					
+					<td class="col-md-3 col-md-offset-4"><img src="../assets/img/libros/{{data.imagen}}" class="col-lg-4"></td>
+					<td>{{data.f_public}}</td>
+					<th colspan="2">
+						<button ng-click='update_book(data.id_libro)' class="btn btn-primary">Editar</button>
+						<button ng-click='delete_book(data.id_libro)' class="btn btn-danger">Remover</button>
+					</th>	
+					
+					
+									
+				</tr>	
+			</table>
+			
+	</div>	
+
 
 </body>
 
