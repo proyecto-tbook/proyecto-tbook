@@ -56,7 +56,7 @@ session_start();
 		          </div>
 		          <div id='_datos' >
 		            <h3>{{x.Titulo | cut:true:30:' ...'}}</h3>
-		            <a href=""><span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span></a>
+		            <span>{{x.Usuario}} {{x.UsuarioApellido|cut:true:1:'.'}}</span>
 		            <a href=""><span></span></a>
 		            <form>
 		            <a id="_verLibro" href="Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" ng-model="servicio.datosCompartidos" ng-click="servicio.anadirElemento(x.lib_id)">Ver ></a>
