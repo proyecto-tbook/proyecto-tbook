@@ -21,9 +21,12 @@ $users=  getUsuario($fullname);
 	<link rel="stylesheet" type="text/css" href="../assets/css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/star-rating.css">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script> -->	
+	<script type="text/javascript" src="../assets/js/angular.min.js"></script> 
+    <script type="text/javascript" src="../assets/js/angular-route.min.js"></script> 
+    <script type="text/javascript" src="../assets/js/angular-resource.min.js"></script> 
 	<script  src="../controller/app.js"></script>
 	<script  src="../controller/controller.js"></script>
 	<script  src="../controller/ver_libros.js"></script>

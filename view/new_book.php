@@ -32,13 +32,13 @@
   <h5>You selected autor: {{datos.autor}}</h5>
   <h5>You selected f_publicacion: {{datos.f_publicacion}}</h5>
   <h5>You selected descripcion: {{datos.descripcion}}</h5>
-  <h5>You selected foto: {{datos.foto_portada}}</h5>
+  <h5>You selected foto: {{datos.foto}}</h5>
   <h5>{{datos}}</h5>
   <br>
   	
   
 </div>
 <div class="form-group">
-  <button ng-click = "save_book(' <?php echo $users[3]; ?>')">Guardar</button>
+  <button ng-click = "save_book(' <?php echo $users[3]; ?>',datos)">Guardar</button>
 </div><br>
 </form> 

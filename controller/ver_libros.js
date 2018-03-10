@@ -26,6 +26,9 @@ app.controller('controlador', function($scope, $http) {
     // .then(function (response) {$scope.names = response.data.records;      
     // });
     };
+
+
+////////////////////Presentar categorias/////////////
     $scope.new_book = function(usuer){
       $scope.insert= true;
         $http({
@@ -34,9 +37,10 @@ app.controller('controlador', function($scope, $http) {
         })
         .then(function successCallback(categorias)
         {
-          alert('obtener valor');
+          
           $scope.cat = categorias.data.datos_categoria;
           console.log(categorias);
+          alert('categorias');
 
         },function errorCallback(categorias)
         {
@@ -44,12 +48,36 @@ app.controller('controlador', function($scope, $http) {
         }); 
 
     };
+//////////////////////////Guardar Libro/////////////////
+    $scope.save_book = function(user,datos){
+     if (confirm("Esta seguro de guardar el libro")) {
+      $http({
+          method: 'GET',
+          url: '../model/guardar_libro.php',
+          params: {titulo : datos.titulo,
+            autor : datos.autor,
+            f_publicacion : datos.f_publicacion,
+            descripcion : datos.descripcion,
+            foto : datos.foto,
+            categoria : datos.cate,
+            id_user : user}
+       
+        })
+        .then(function successCallback(categorias)
+        {
+          alert('Se guardo con exito');
+          $scope.insert= false;
+          $scope.ver_libros(1);
+          
+        },function errorCallback(categorias)
+        {
+          console.log("Error, al tratar de traer los datos")
+        }); 
 
-    $scope.save_book = function(id_user){
-      $scope.user = id_user;
-      alert($scope.titulo);
+      }
+      
 
-    }
+    };
 
     // $scope.save_book = function(datos){
   //   alert($scope.datos);
