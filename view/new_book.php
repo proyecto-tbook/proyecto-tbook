@@ -26,13 +26,6 @@
   <option ng-repeat="x in cat" value="{{x.cat}}">{{x.cat}}</option>
   <label ng-model='datos.user'><?php echo $users[3]; ?></label>
   </select>
-
-  <h5>You selected categoria: {{datos.cate}}</h5>
-  <h5>You selected titulo: {{datos.titulo}}</h5>
-  <h5>You selected autor: {{datos.autor}}</h5>
-  <h5>You selected f_publicacion: {{datos.f_publicacion}}</h5>
-  <h5>You selected descripcion: {{datos.descripcion}}</h5>
-  <h5>You selected foto: {{datos.foto}}</h5>
   <h5>{{datos}}</h5>
   <br>
   	

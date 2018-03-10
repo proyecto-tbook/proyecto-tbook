@@ -50,17 +50,20 @@ app.controller('controlador', function($scope, $http) {
     };
 //////////////////////////Guardar Libro/////////////////
     $scope.save_book = function(user,datos){
+      $scope.datos=datos;
+      $scope.user=user;
+
      if (confirm("Esta seguro de guardar el libro")) {
       $http({
           method: 'GET',
           url: '../model/guardar_libro.php',
-          params: {titulo : datos.titulo,
-            autor : datos.autor,
-            f_publicacion : datos.f_publicacion,
-            descripcion : datos.descripcion,
-            foto : datos.foto,
-            categoria : datos.cate,
-            id_user : user}
+          params: {titulo : $scope.datos.titulo,
+            autor : $scope.datos.autor,
+            f_publicacion : $scope.datos.f_publicacion,
+            descripcion : $scope.datos.descripcion,
+            foto : $scope.datos.foto,
+            categoria : $scope.datos.cate,
+            id_user : $scope.user}
        
         })
         .then(function successCallback(categorias)
