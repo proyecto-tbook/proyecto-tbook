@@ -32,6 +32,6 @@
   
 </div>
 <div class="form-group">
-  <button  ng-click = "save_book(' <?php echo $users[3]; ?>',datos)">Guardar</button>
+  <button ng-click = "save_book(' <?php echo $users[3]; ?>',datos)">Guardar</button>
 </div><br>
 </form> 
