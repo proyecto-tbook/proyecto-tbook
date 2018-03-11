@@ -94,11 +94,29 @@ app.controller('controlador', function($scope, $http) {
 
   // }
 
-   
+   $scope.cargar_datos = function(id_libro, id_user){
+    $scope.id_libro = id_libro;
+    $scope.id_user = id_user;
+      $http({
+        method: 'GET',
+        url: '../model/imagenes.php',
+        params: {id_user: user, $scopeid_libro : $scope.id_user}
+      })
+      .then(function successCallback(datosDependencias)
+      {
+        $scope.names = datosDependencias.data.records;
+        console.log(datosDependencias);
+
+      },function errorCallback(datosDependencias)
+      {
+        console.log("Error, al tratar de traer los datos")
+      }); 
+   };
 
 
     $scope.update_book = function(id_libro){
-      alert('Hola borrar'+id_libro);
+
+      
     };
 
     $scope.delete_book = function(id_libro){
