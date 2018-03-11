@@ -3,7 +3,6 @@ var app = angular.module('app', ['ngRoute','ngResource']);
 
 app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 
-<<<<<<< HEAD
 	
 	$scope.getParameterByName=function(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -68,7 +67,7 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 		
 
 	
-=======
+
 	
 	$scope.getParameterByName=function(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -133,7 +132,7 @@ app.controller('ctrlUsuario', function($scope, $http, $location, $window){
 		
 
 	
->>>>>>> master
+
 
 	$scope.cancel= function(){
 		$window.location.href='user.php';
@@ -163,7 +162,7 @@ app.controller('crtlBusqueda',function($scope, $http){
  alert($scope.categorias);
 
 
-<<<<<<< HEAD
+
 app.controller('crtlBusqueda', function($scope, $http){
 	$scope.categorias = [
 	{ id : "1", nombre : "Terror" },
@@ -181,6 +180,5 @@ app.controller('myCtrl', function($scope) {
         {model : "Fiat 500", color : "white"},
         {model : "Volvo XC90", color : "black"}
     ];
-=======
->>>>>>> master
+
 });
