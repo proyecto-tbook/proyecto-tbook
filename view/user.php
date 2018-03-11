@@ -83,7 +83,7 @@ $users=  getUsuario($fullname);
 	<nav class="woocommerce-MyAccount-navigation">
 		<ul class="woocommerce-MyAccount-navigation">
 			<li class="woocommerce-MyAccount-navigation not(.is-active):hover ">
-				<a href="#!perfil" class="camb" ng-click = "ver_libros(' <?php echo $users[3]; ?>')">Mi Biblioteca</a>
+				<a href="" class="camb" ng-click = "ver_libros(' <?php echo $users[3]; ?>')">Mi Biblioteca</a>
 			</li>		
 			
 		</ul>
@@ -164,8 +164,8 @@ $users=  getUsuario($fullname);
 					<td class="col-md-3 col-md-offset-4"><img src="../assets/img/libros/{{data.imagen}}" class="col-lg-4"></td>
 					<td>{{data.f_public}}</td>
 					<th colspan="2">
-						<button ng-click='update_book(data.id_libro)' class="btn btn-primary">Editar</button>
-						<button ng-click='delete_book(data.id_libro)' class="btn btn-danger">Remover</button>
+						<button ng-click='update_book(data.id_libro,<?php echo $users[3]; ?>)' class="btn btn-primary">Editar</button>
+						<button ng-click='delete_book(data.id_libro,<?php echo $users[3]; ?>)' class="btn btn-danger">Remover</button>
 					</th>	
 					
 					

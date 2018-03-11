@@ -39,7 +39,7 @@ app.controller('controlador', function($scope, $http) {
         {
           
           $scope.cat = categorias.data.datos_categoria;
-          console.log(categorias);
+          console.log(categorias);          
           alert('categorias');
 
         },function errorCallback(categorias)
@@ -68,6 +68,7 @@ app.controller('controlador', function($scope, $http) {
         })
         .then(function successCallback(categorias)
         {
+          
           alert('Se guardo con exito');
           $scope.insert= false;
           $scope.ver_libros(1);
