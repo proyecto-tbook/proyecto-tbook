@@ -4,48 +4,59 @@
      header("Content-Type: application/json; charset=UTF-8");
 	 header('Content-Type: text/html; charset=UTF-8');
 
-	 require("conexion.php");
-	 // {titulo : datos.titulo,
-  //           autor : datos.autor,
-  //           f_publicacion : datos.f_publicacion,
-  //           descripcion : datos.descripcion,
-  //           foto : datos.foto,
-  //           categoria : datos.cate
+	// require("conexion.php");
+	 $conn = new mysqli("localhost", "root", "", "t-book");
 
-	//$datos=json_decode(file_get_contents("php://input"));
-
-	 $titulo = $_GET['titulo'];
-	 $autor  = $_GET['autor'];
-	 $f_publi = $_GET['f_publicacion'];
-	 $descripcion = $_GET['descripcion'];
-	 $restriccion = 1;
-	 $foto = $_GET['foto'];
-	 $id_user = $_GET['user'];
-	 $categoria = $_GET['cate'];
-	 // $titulo = 'A orillas del rio piedra me sente y llores';
-	 // $foto = 'libro12.jpg';
-	 // $autor  = 'Paulo Coelho';
-	 // $f_publi = '2018-02-02';
-	 // $descripcion = 'Viaje de dos amigos de infancia x el mundo';
-	 // $restriccion = 1;
-	 
-	 // $id_user = 1;
 	
-	$sql = "INSERT INTO libro (Titulo, Imagen, Autor, F_publicacion, Descripcion, Restriccion, Usuario_idUsuario1 ) " +
-	  "VALUES ('$titulo', '$foto', '$autor', '$f_publi','descripcion',$restriccion, $id_user)";
-	$result = mysql_query($sql);
+	 
 
-	$id_libro=mysql_insert_id();
+	 // $titulo = $_GET['titulo'];
+	  // $foto = 'dafault.jpg';
+	 // $autor  = $_GET['autor'];
+	 // $f_publi = $_GET['f_publicacion'];
+	 // $descripcion = $_GET['descripcion'];
+	 // $restriccion = 1;	
+	 // $id_user = $_GET['id_user'];
+	 // $categoria = $_GET['categoria'];
+	 /////////////version prubeas
+	 $titulo = 'A orillas del rio piedra me sente y llores';
+	 $foto = 'libro12.jpg';
+	 $autor  = 'Paulo Coelho';
+	 $f_publi = '2018-02-02';
+	 $descripcion = 'Viaje de dos amigos de infancia x el mundo';
+	 $restriccion = 1;
+	 $id_user = 1;
+	 $categoria = 'Novelas';
+	
+	$result1 = $conn->query("INSERT INTO libro (`Titulo`, `Imagen`, `Autor`, `F_publicacion`, `Descripcion`, `Restriccion`, `Usuario_idUsuario1`) " +
+	  " VALUES ('$titulo', '$foto', '$autor', '$f_publi','descripcion',$restriccion, $id_user)");
+	//`Titulo`, `Imagen`, `Autor`, `F_publicacion`, `Descripcion`, `Restriccion`, `Usuario_idUsuario1`) VALUES ('NOel', 'libro100.jpg', 'Jonh Kansenbech', '2018-03-02', 'LIbro de locos', '1', '1');
+	echo "respuesta 1: ".$result1."<br>";
+	/////consultar ultimo libro ingresado///////////
+	$result2 = $conn->query("SELECT max(idLibro) FROM libro where Usuario_idUsuario1 = $id_user");
+	$resp ='';
+	while($rs = $result2->fetch_array(MYSQLI_ASSOC)) {
+		$resp = $rs['max(idLibro)'];
+	}
+    echo "idLibro: ".$resp."<br>";
+    //SELECT Max(idLibro) FROM `t-book`.libro where Usuario_idUsuario1 = 1;
+
+	//
 
 	// $id_libro = "SELECT * FROM libro where ");
+	$result3 = $conn->query("INSERT INTO categoria (Categoria_idCategoria, Libro_idLibro)"+
+	"VALUES('Novelas','$resp')");
 
-	$sql2 ="INSERT INTO categoria (Categoria_idCategoria, Libro_idLibro)"+
-	"VALUES('$categoria','$id_libro')";
+	  echo "Resultado 2: ".$result3."<br>";
+	$conn->close();
+	// if($result == 1){
+	// 	echo($id_user);
 
-	$result = mysql_query($sql2);
-	$conneccion->close();
+	// }else{
+	// 	echo 2;
+	// }
 
-	echo($result);
+	
 
 
 	/////////imagen////////

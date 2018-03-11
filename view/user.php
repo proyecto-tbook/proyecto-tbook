@@ -67,7 +67,7 @@ $users=  getUsuario($fullname);
 	<div class="star panel-body" align="center">
 		
 		<p class="clasificacion star1">
-   			<input id="radio1" name="estrellas" value="5" type="radio"><!--
+   		   <input id="radio1" name="estrellas" value="5" type="radio"><!--
     	--><label  class="star2" for="radio1">★</label><!--
     	--><input id="radio2" name="estrellas" value="4" type="radio"><!--
     	--><label  class="star2" for="radio2">★</label><!--
@@ -83,7 +83,7 @@ $users=  getUsuario($fullname);
 	<nav class="woocommerce-MyAccount-navigation">
 		<ul class="woocommerce-MyAccount-navigation">
 			<li class="woocommerce-MyAccount-navigation not(.is-active):hover ">
-				<a href="#!perfil" class="camb" ng-click = "ver_libros(' <?php echo $users[3]; ?>')">Mi Biblioteca</a>
+				<a href="" class="camb" ng-click = "ver_libros(' <?php echo $users[3]; ?>')">Mi Biblioteca</a>
 			</li>		
 			
 		</ul>
@@ -164,7 +164,8 @@ $users=  getUsuario($fullname);
 					<td class="col-md-3 col-md-offset-4"><img src="../assets/img/libros/{{data.imagen}}" class="col-lg-4"></td>
 					<td>{{data.f_public}}</td>
 					<th colspan="2">
-						<button ng-click='update_book(data.id_libro)' class="btn btn-primary">Editar</button>
+						<a href="#!update" ng-click='cargar_info(data.id_libro,<?php echo $users[3];?>)' >Editar</a>
+						<!-- <button  ng-click='cargar_info(data.id_libro,<?php echo $users[3];?>)' class="btn btn-primary">Editar</button> -->
 						<button ng-click='delete_book(data.id_libro)' class="btn btn-danger">Remover</button>
 					</th>	
 					
@@ -175,7 +176,7 @@ $users=  getUsuario($fullname);
 			
 	</div>	
 
-
+ <div ng-view ></div>
 </body>
 
 </html>

@@ -66,15 +66,16 @@ app.controller('controlador', function($scope, $http) {
             id_user : $scope.user}
        
         })
-        .then(function successCallback(categorias)
+        .then(function successCallback(datosDependencias)
         {
-          alert('Se guardo con exito');
+          $scope.datos = datosDependencias.data.records;
+        console.log(datosDependencias);
           $scope.insert= false;
           $scope.ver_libros(1);
           
-        },function errorCallback(categorias)
+        },function errorCallback(datosDependencias)
         {
-          console.log("Error, al tratar de traer los datos")
+          alert('Error al guardar el Libro');
         }); 
 
       }
@@ -82,24 +83,33 @@ app.controller('controlador', function($scope, $http) {
 
     };
 
-    // $scope.save_book = function(datos){
-  //   alert($scope.datos);
-  //   $http({
-  //     method: 'GET',
-  //     url: '../model/guardar_libro.php',
-  //     params: {$scope.datos}
-
-  //   })
-
-  // }
-
    
 
+///////////////////////Modificar Libro///////////////////////
+    $scope.cargar_info = function(id_libro,id_user){
+      $scope.id_lib = id_libro;
+      $scope.id_user = id_user;
+      alert($scope.id_lib+" user"+$scope.id_user);
+      $http({
+        method: 'GET',
+        url: '../model/datos_modificar.php',
+        params: {id_libro: $scope.id_lib, id_user: $scope.id_user }
+      })
+      .then(function successCallback(datosDependencias)
+      {
+        $scope.modificar = datosDependencias.data.records;
+        console.log(datosDependencias);
 
-    $scope.update_book = function(id_libro){
-      alert('Hola borrar'+id_libro);
+
+      },function errorCallback(datosDependencias)
+      { 
+        console.log("Error, al tratar de traer los datos");
+      }); 
+
+      
     };
 
+///////////////////////////Borrar Libro////////////////////
     $scope.delete_book = function(id_libro){
       $scope.id_prueba=id_libro;
       
