@@ -7,11 +7,7 @@ app.config(function($routeProvider/*$locationProvider*/){
 		//	templateUrl: '',//el archivo que quieren que se cargue
 			//controller://y que controlador se va a utilizar.... tambien se puede omitir si no se utiliza controlador
 		//})		
-		.when('/update',{
-			templateUrl : "../view/update_book.html",
-			controller : 'controlador'
-
-		})
+		
 
 		//$locationProvider.html5Mode(true);
 });					
