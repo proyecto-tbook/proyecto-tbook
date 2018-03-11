@@ -61,37 +61,58 @@ and open the template in the editor.
         echo "</script>";
       }
     ?>                     
-        <h3 style="background: #595959; color: #fefefe;padding: 30px;text-align: center; clear:both;">
+        <h3 style="background: #595959; color: #fefefe;padding: 50px;text-align: center ">
             Categoria 
             <?php echo $_GET['categoria'] ?>
         </h3>
-        <div id="_cuerpo" ng-controller="cargarLibros">                                    
+        <div id="cuerpo" ng-controller="cargarLibros">                                    
             <div ng-init="load('<?php echo $_GET['categoria'] ?>')">
             </div>            
-            <center> 
-            <article ng-repeat="x in names" style="margin-bottom:5%;">                                        
-                  <div >
-                  <div class='_img_container'>
-                    <img src="../assets/img/libros/{{x.imagen}}">
-                  </div>
-                  <div id='_datos' >
-                    <h3>{{x.nombre | cut:true:30:' ...'}}</h3>
-                    <span>{{x.autor}}</span>
-                    <a href=""><span></span></a>
-                    <form>
-                    <a id="_verLibro" href="Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" ng-model="servicio.datosCompartidos" ng-click="servicio.anadirElemento(x.lib_id)">Ver ></a>
-                  </form>
-                  </div>                  
-                  </div>
-                </article>
-                
-
-                 
+            <center>                
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-item active" ng-repeat="x in names | limitTo: 1"> 
+                            <table cellpadding="10">
+                                <tr>
+                                    <th >
+                                        <div class="card d-block w-100" style="width: 68rem;">
+                                            <center>
+                                            <img style="max-width:200px;" class="card-img-top " src="../assets/img/libros/{{x.imagen}}">
+                                            </center>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{x.nombre}}</h5>
+                                                <a id="verLibro" href="../view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" >Ver ></a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>                       
+                    <div class="carousel-inner">                        
+                        <div class="carousel-item" ng-repeat="x in names "> 
+                            <table cellpadding="10">
+                                <tr>
+                                    <th >
+                                        <div class="card d-block w-100" style="width: 18rem;">
+                                            <center>
+                                            <img style="max-width:200px;" class="card-img-top " src="../assets/img/libros/{{x.imagen}}">
+                                            </center>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{x.nombre}}</h5>
+                                                <a id="verLibro" href="../view/Libro.php?lib={{x.lib_id}}"   class="btn btn-success btn-lg" >Ver ></a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>                       
+                    </div>                    
+                </div>
+                <a class="btn btn-lg btn-secondary" href="./../index.php">Regresar</a>
             </center>
         </div>
-        <div>
 
-            <div id="auspiciantes" style="margin-top: 15%;">
+        <div>
+            <div id="auspiciantes" style="margin-top: 1%;">
                 <div id="img_aus">
                   <img src="../assets/img/auspiciantes/unl.png">
                   <img src="../assets/img/auspiciantes/cce.png">
