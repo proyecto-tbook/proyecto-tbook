@@ -7,9 +7,6 @@
 	// require("conexion.php");
 	 $conn = new mysqli("localhost", "root", "", "t-book");
 
-	
-	 
-
 	 // $titulo = $_GET['titulo'];
 	  // $foto = 'dafault.jpg';
 	 // $autor  = $_GET['autor'];
@@ -26,8 +23,7 @@
 	 $descripcion = 'Viaje de dos amigos de infancia x el mundo';
 	 $restriccion = 1;
 	 $id_user = 1;
-	 $categoria = 'Novelas';
-	
+	 $categoria = 'Novelas';	
 	$result1 = $conn->query("INSERT INTO libro (`Titulo`, `Imagen`, `Autor`, `F_publicacion`, `Descripcion`, `Restriccion`, `Usuario_idUsuario1`) " +
 	  " VALUES ('$titulo', '$foto', '$autor', '$f_publi','descripcion',$restriccion, $id_user)");
 	//`Titulo`, `Imagen`, `Autor`, `F_publicacion`, `Descripcion`, `Restriccion`, `Usuario_idUsuario1`) VALUES ('NOel', 'libro100.jpg', 'Jonh Kansenbech', '2018-03-02', 'LIbro de locos', '1', '1');
@@ -39,11 +35,6 @@
 		$resp = $rs['max(idLibro)'];
 	}
     echo "idLibro: ".$resp."<br>";
-    //SELECT Max(idLibro) FROM `t-book`.libro where Usuario_idUsuario1 = 1;
-
-	//
-
-	// $id_libro = "SELECT * FROM libro where ");
 	$result3 = $conn->query("INSERT INTO categoria (Categoria_idCategoria, Libro_idLibro)"+
 	"VALUES('Novelas','$resp')");
 
