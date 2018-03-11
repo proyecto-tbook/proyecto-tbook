@@ -25,7 +25,7 @@
 	 $id_user = 1;
 	 $categoria = 'Novelas';	
 	$result1 = $conn->query("INSERT INTO libro (`Titulo`, `Imagen`, `Autor`, `F_publicacion`, `Descripcion`, `Restriccion`, `Usuario_idUsuario1`) " +
-	  " VALUES ('$titulo', '$foto', '$autor', '$f_publi','descripcion',$restriccion, $id_user)");
+	  " VALUES ('$titulo', '$foto', '$autor', '$f_publi','$descripcion',$restriccion, $id_user)");
 	//`Titulo`, `Imagen`, `Autor`, `F_publicacion`, `Descripcion`, `Restriccion`, `Usuario_idUsuario1`) VALUES ('NOel', 'libro100.jpg', 'Jonh Kansenbech', '2018-03-02', 'LIbro de locos', '1', '1');
 	echo "respuesta 1: ".$result1."<br>";
 	/////consultar ultimo libro ingresado///////////
@@ -36,7 +36,7 @@
 	}
     echo "idLibro: ".$resp."<br>";
 	$result3 = $conn->query("INSERT INTO categoria (Categoria_idCategoria, Libro_idLibro)"+
-	"VALUES('Novelas','$resp')");
+	"VALUES('$categoria','$resp')");
 
 	  echo "Resultado 2: ".$result3."<br>";
 	$conn->close();
